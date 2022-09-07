@@ -6,3 +6,4 @@ TODO:
 - login for guitarplayer
 - index for all songs
 - search bar --> searches song text (pipe remove chords)
+- toggle darkmode

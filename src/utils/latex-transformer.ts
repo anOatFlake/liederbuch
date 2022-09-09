@@ -19,41 +19,45 @@ export function latexToHtml(fileString: string): string {
  * @returns htmlString string
  */
 function maexCustomLatexToHtml(fileLine: string): string {
+    let htmlLine = "";
     if(fileLine.includes("\\documentclass") || fileLine.includes("\\begin{document}") || fileLine.includes("\\end{document}"))
-        return "";
+        return " ";
 
     if(fileLine.includes("\\song")) {
         //title
-        fileLine.replace("\\song", "<div class='p-2'><p class='h2'>");  
+        return fileLine.replace("\\song", "<div class='p-2'><p class='h2'>")
+                .replace("{", "")
+                .replace("}", " ")
+                .replace("Deutsch", "") + "</p></div>\n";
         //remove {} and language definition
-        fileLine.replace("{", "");
-        fileLine.replace("}", " ");
+        fileLine.replace("{", '');
+        fileLine.replace("}", '');
         fileLine.replace("Deutsch", "");
         //add endtag for title
         fileLine += "</p></div>\n";
     }
 
     if(fileLine.includes("\\verse{")) 
-        fileLine.replace("\\verse{", '<div class="p-2 song">');
+        return fileLine.replace("\\verse{", '<div class="p-2 song">');
     
     if(fileLine.includes("\\chorus{")) 
-        fileLine.replace('\\chorus{', '<div class="part part-chorus">');
-    
-    if(fileLine.trim().includes("}"))
-        fileLine.replace("}", "</div>\n");
+        return fileLine.replace('\\chorus{', '<div class="part part-chorus">');
     
     if(fileLine.includes("\\li{")) {
-        fileLine.replace('\\li{', '<p class="line line-li">');
-        fileLine.replace('}', '</p>\n');
-        fileLine.replace('\\', ' <span class="chord" data-star="">');
-        fileLine.replace('[]', '</span>');
+        return fileLine.replace('\\li{', '<p class="line line-li">')
+                        .replace('}', '</p>\n')
+                        .replace('\\', ' <span class="chord" data-star="">')
+                        .replace('[]', '</span>');
     }
 
     if(fileLine.includes("\\refrain"))
-        fileLine.replace('\\refrain', '<p class="line">Ref.</p>\n');
+        return fileLine.replace('\\refrain', '<p class="line">Ref.</p>\n');
 
     if(fileLine.includes("\\footer{"))
-        fileLine.replace('\\footer{', '<hr><br><div><div class="part-footer">');
+        return fileLine.replace('\\footer{', '<hr><br><div><div class="part-footer">');
+
+    if(fileLine.trim().includes("}"))
+        return fileLine.replace("}", "</div>\n");
 
     return fileLine;
 }

@@ -1,8 +1,9 @@
 import { GetStaticPaths, GetStaticProps, NextPage, GetStaticPropsContext } from "next";
-import { getAllSongIds, getSongData } from "../components/songs";
+import { getAllSongIds, getSongData } from "../../components/songs";
 import Head from 'next/head';
+import { latexToHtml } from "../../utils/latex-transformer";
 
-const Song: NextPage = () => {
+const Song: NextPage = ({songData}: any) => {
     return (
         <>
             <Head>
@@ -10,13 +11,14 @@ const Song: NextPage = () => {
                 <meta name="" content=""></meta>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
         </>
     )
 }
 
 export default Song;
 
-export const getStaticPaths: GetStaticPaths = async => {
+export const getStaticPaths: GetStaticPaths = async() => {
     const paths = getAllSongIds();
     return{
         paths,

@@ -21,14 +21,14 @@ export function latexToHtml(fileString: string): string {
 function maexCustomLatexToHtml(fileLine: string): string {
     let htmlLine = "";
     if(fileLine.includes("\\documentclass") || fileLine.includes("\\begin{document}") || fileLine.includes("\\end{document}"))
-        return " ";
+        return "";
 
     if(fileLine.includes("\\song")) {
         //title
         return fileLine.replace("\\song", "<div class='p-2'><p class='h2'>")
+                .replace("Deutsch", "") 
                 .replace("{", "")
-                .replace("}", " ")
-                .replace("Deutsch", "") + "</p></div>\n";
+                .replace("}", "")+ "</p></div>\n";
         //remove {} and language definition
         fileLine.replace("{", '');
         fileLine.replace("}", '');

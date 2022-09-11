@@ -19,22 +19,14 @@ export function latexToHtml(fileString: string): string {
  * @returns htmlString string
  */
 function maexCustomLatexToHtml(fileLine: string): string {
-    let htmlLine = "";
     if(fileLine.includes("\\documentclass") || fileLine.includes("\\begin{document}") || fileLine.includes("\\end{document}"))
         return "";
 
     if(fileLine.includes("\\song")) {
-        //title
         return fileLine.replace("\\song", "<div class='p-2'><p class='h2'>")
                 .replace("Deutsch", "") 
                 .replaceAll("{", "")
                 .replaceAll("}", " ")+ "</p></div>\n";
-        //remove {} and language definition
-        fileLine.replace("{", '');
-        fileLine.replace("}", '');
-        fileLine.replace("Deutsch", "");
-        //add endtag for title
-        fileLine += "</p></div>\n";
     }
 
     if(fileLine.includes("\\verse{")) 

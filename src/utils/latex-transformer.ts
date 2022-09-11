@@ -27,8 +27,8 @@ function maexCustomLatexToHtml(fileLine: string): string {
         //title
         return fileLine.replace("\\song", "<div class='p-2'><p class='h2'>")
                 .replace("Deutsch", "") 
-                .replace("{", "")
-                .replace("}", "")+ "</p></div>\n";
+                .replaceAll("{", "")
+                .replaceAll("}", " ")+ "</p></div>\n";
         //remove {} and language definition
         fileLine.replace("{", '');
         fileLine.replace("}", '');
@@ -46,15 +46,15 @@ function maexCustomLatexToHtml(fileLine: string): string {
     if(fileLine.includes("\\li{")) {
         return fileLine.replace('\\li{', '<p class="line line-li">')
                         .replace('}', '</p>\n')
-                        .replace('\\', ' <span class="chord" data-star="">')
-                        .replace('[]', '</span>');
+                        .replaceAll('\\', ' <span class="chord" data-star="">')
+                        .replaceAll('[]', '</span>');
     }
 
     if(fileLine.includes("\\refrain"))
         return fileLine.replace('\\refrain', '<p class="line">Ref.</p>\n');
 
     if(fileLine.includes("\\footer{"))
-        return fileLine.replace('\\footer{', '<hr><br><div><div class="part-footer">');
+        return fileLine.replace('\\footer{', '<br><hr><br><div><div class="part-footer">');
 
     if(fileLine.trim().includes("}"))
         return fileLine.replace("}", "</div>\n");

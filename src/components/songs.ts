@@ -29,8 +29,6 @@ export async function getSongData(id: string | string[] | undefined) {
   const contentHtml = latexToHtml(fileContents);
   return {
     id,
-    fileContents,
-    typeOF,
     contentHtml
   }
 }

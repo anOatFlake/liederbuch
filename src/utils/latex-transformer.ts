@@ -35,6 +35,9 @@ function maexCustomLatexToHtml(fileLine: string): string {
     if(fileLine.includes("\\chorus{")) 
         return fileLine.replace('\\chorus{', '<div class="part part-chorus">');
     
+    if(fileLine.includes("\\bridge{")) 
+        return fileLine.replace('\\bridge{', '<div class="part part-bridge">');
+    
     if(fileLine.includes("\\li{")) {
         return fileLine.replace('\\li{', '<p class="line line-li">')
                         .replace('}', '</p>\n')

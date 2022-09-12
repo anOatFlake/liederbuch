@@ -4,10 +4,10 @@ import { latexToHtml } from '../utils/latex-transformer';
 
 const songsDirectory = path.join(process.cwd(), 'src', 'songs');
 
-export function getAllSongIds(): Array<string | { params: { [key: string]: string } }> {
+export function getAllSongIds(): Array<{ params: { [key: string]: string } }> {
     const fileNames = fs.readdirSync(songsDirectory);
   
-    return fileNames.map((fileName) => {
+    return fileNames.map((fileName: string) => {
       return {
         params: {
           id: fileName.replace(/\.tex$/, ''),
@@ -16,16 +16,21 @@ export function getAllSongIds(): Array<string | { params: { [key: string]: strin
     })
 }
 
-export function getAllSongIdsByFirstLetter(letter: string) {
-    getAllSongIds().map((file) => {
-        //TODO
+export function getAllSongIdsByFirstLetters(letter: string): Array<{ params: { [key: string]: string } }> {
+    return getAllSongIds().filter((file) => {
+      file.params.id?.startsWith(letter);
     })
+}
+
+export function getAllSongIdsStartingWithNumberOrSymbol(): Array<{ params: { [key: string]: string } }> {
+  return getAllSongIds().filter((file) => {
+    /^\d/.test(file.params.id!) || /[$-/:-?{-~!"^_`\[\]]/.test(file.params.id!);
+  })
 }
 
 export async function getSongData(id: string | string[] | undefined) {
   const fullPath = path.join(songsDirectory, `${id}.tex`);
   let fileContents = fs.readFileSync(fullPath, `utf-8`);
-  let typeOF = typeof(fileContents);
   const contentHtml = latexToHtml(fileContents);
   return {
     id,

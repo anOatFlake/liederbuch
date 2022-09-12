@@ -25,6 +25,7 @@ export function getAllSongIds(): Array<{ params: { [key: string]: string } }> {
  * @param letter string
  * @returns object array with { params: { id: string } }
  */
+//TODO doesnt work
 export function getAllSongIdsByFirstLetters(letter: string): Array<{ params: { [key: string]: string } }> {
     return getAllSongIds().filter((file) => {
       file.params.id?.startsWith(letter);

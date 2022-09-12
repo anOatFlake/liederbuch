@@ -2,10 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { latexToHtml } from '../utils/latex-transformer';
 
-const postsDirectory = path.join(process.cwd(), 'src', 'songs');
+const songsDirectory = path.join(process.cwd(), 'src', 'songs');
 
 export function getAllSongIds(): Array<string | { params: { [key: string]: string } }> {
-    const fileNames = fs.readdirSync(postsDirectory);
+    const fileNames = fs.readdirSync(songsDirectory);
   
     return fileNames.map((fileName) => {
       return {
@@ -23,7 +23,7 @@ export function getAllSongIdsByFirstLetter(letter: string) {
 }
 
 export async function getSongData(id: string | string[] | undefined) {
-  const fullPath = path.join(postsDirectory, `${id}.tex`);
+  const fullPath = path.join(songsDirectory, `${id}.tex`);
   let fileContents = fs.readFileSync(fullPath, `utf-8`);
   let typeOF = typeof(fileContents);
   const contentHtml = latexToHtml(fileContents);

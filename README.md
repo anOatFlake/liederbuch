@@ -4,6 +4,7 @@ TODO:
 - styling Songs
   - toggle darkmode
 - latex pipe add different setting for not maex styling
+- add intro and outro to maeslatextohtml
 - follow me page
 - login for guitarplayer and diffent units and diffrent singers --> nextAuth
   - create own songbook reportaire and display just these

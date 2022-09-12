@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage, GetStaticPropsContext } from "next";
-import { getAllSongIds, getSongData } from "../../components/songs";
+import { getAllSongIds, getSongData } from "../../utils/song";
 import Head from 'next/head';
 
 const Song: NextPage = ({songData}: any) => {

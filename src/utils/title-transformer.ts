@@ -1,13 +1,14 @@
 /**
  * turns the ANSI strings into the German titles
  * @param id string
- * @returns string 
+ * @returns string
  */
 export function cleanUpTitle(id: string): string {
-    return replaceSharpS(id).replaceAll('_', ' ')
-                            .replaceAll("ae", "ä")
-                            .replaceAll("oe", "ö")
-                            .replaceAll("ue", "ü");
+  return replaceSharpS(id)
+    .replaceAll("_", " ")
+    .replaceAll("ae", "ä")
+    .replaceAll("oe", "ö")
+    .replaceAll("ue", "ü");
 }
 
 /**
@@ -16,7 +17,8 @@ export function cleanUpTitle(id: string): string {
  * @returns string
  */
 function replaceSharpS(id: string): string {
-    return id.replaceAll("gross", "groß")
-             .replaceAll("Strassen", "Straßen")
-             .replaceAll("Scheisse", "Scheiße"); 
+  return id
+    .replaceAll("gross", "groß")
+    .replaceAll("Strassen", "Straßen")
+    .replaceAll("Scheisse", "Scheiße");
 }

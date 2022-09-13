@@ -1,23 +1,23 @@
-import fs from 'fs';
-import path from 'path';
-import { latexToHtml } from './latex-transformer';
+import fs from "fs";
+import path from "path";
+import { latexToHtml } from "./latex-transformer";
 
-const songsDirectory = path.join(process.cwd(), 'src', 'songs');
+const songsDirectory = path.join(process.cwd(), "src", "songs");
 
 /**
  * Gets all song ids (aka filenames) from the songsDirectory
  * @returns object array with { params: { id: string } }
  */
 export function getAllSongIds(): Array<{ params: { [key: string]: string } }> {
-    const fileNames = fs.readdirSync(songsDirectory);
-  
-    return fileNames.map((fileName: string) => {
-      return {
-        params: {
-          id: fileName.replace(/\.tex$/, ''),
-        },
-      }
-    })
+  const fileNames = fs.readdirSync(songsDirectory);
+
+  return fileNames.map((fileName: string) => {
+    return {
+      params: {
+        id: fileName.replace(/\.tex$/, ""),
+      },
+    };
+  });
 }
 
 /**
@@ -26,20 +26,24 @@ export function getAllSongIds(): Array<{ params: { [key: string]: string } }> {
  * @returns object array with { params: { id: string } }
  */
 //TODO doesnt work
-export function getAllSongIdsByFirstLetters(letter: string): Array<{ params: { [key: string]: string } }> {
-    return getAllSongIds().filter((file) => {
-      file.params.id?.startsWith(letter);
-    })
+export function getAllSongIdsByFirstLetters(
+  letter: string
+): Array<{ params: { [key: string]: string } }> {
+  return getAllSongIds().filter((file) => {
+    file.params.id?.startsWith(letter);
+  });
 }
 
 /**
  * Gets all song ids that start with a non letter character
  * @returns  object array with { params: { id: string } }
  */
-export function getAllSongIdsStartingWithNumberOrSymbol(): Array<{ params: { [key: string]: string } }> {
+export function getAllSongIdsStartingWithNumberOrSymbol(): Array<{
+  params: { [key: string]: string };
+}> {
   return getAllSongIds().filter((file) => {
     /^\d/.test(file.params.id!) || /[$-/:-?{-~!"^_`\[\]]/.test(file.params.id!);
-  })
+  });
 }
 
 /**
@@ -53,6 +57,6 @@ export async function getSongData(id: string | string[] | undefined) {
   const contentHtml = latexToHtml(fileContents);
   return {
     id,
-    contentHtml
-  }
+    contentHtml,
+  };
 }

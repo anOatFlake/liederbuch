@@ -24,11 +24,17 @@ function maexCustomLatexToHtml(fileLine: string): string {
   )
     return "";
 
-  if (fileLine.includes("\\song")) {
-    return (
+  if (fileLine.includes("\\song") || fileLine.includes("\\multicolsong")) {
+    return (  //TODO: Into, Outro
       fileLine
         .replace("\\song", "<div class='p-2'><p class='h2'>")
-        .replace("Deutsch", "")
+        .replace("\\multicolsong", "<div class='p-2'><p class='h2'>")
+        .replace("{Deutsch}", "")
+        .replace("{Englisch}", "")
+        .replace("{Italienisch}", "")
+        .replace("{Rock}", "")
+        .replace("{Punk}", "")
+        .replace("{Pop}", "")
         .replaceAll("{", "")
         .replaceAll("}", " ") + "</p></div>\n"
     );

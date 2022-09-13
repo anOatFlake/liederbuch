@@ -5,44 +5,31 @@ import { latexToHtml } from "./latex-transformer";
 const songsDirectory = path.join(process.cwd(), "src", "songs");
 
 /**
- * Gets all song ids (aka filenames) from the songsDirectory
+ * Gets all song names (aka filenames) from the songsDirectory
+ * @returns string array
+ */
+export function getAllSongIds(): Array< string > {
+  const fileNames = fs.readdirSync(songsDirectory);
+
+  return fileNames.map((fileName: string) => {
+    return fileName.replace(/\.tex$/, "");
+  });
+}
+
+/**
+ * Gets all song paths (aka filenames) from the songsDirectory 
+ * needed for [id].getStaticPaths()
  * @returns object array with { params: { id: string } }
  */
-export function getAllSongIds(): Array<{ params: { [key: string]: string } }> {
+export function getAllSongPaths(): Array<{ params: { [key: string]: string } }> {
   const fileNames = fs.readdirSync(songsDirectory);
 
   return fileNames.map((fileName: string) => {
     return {
       params: {
         id: fileName.replace(/\.tex$/, ""),
-      },
+      }
     };
-  });
-}
-
-/**
- * Gets all song ids (aka filenames) filterd by the first letters
- * @param letter string
- * @returns object array with { params: { id: string } }
- */
-//TODO doesnt work
-export function getAllSongIdsByFirstLetters(
-  letter: string
-): Array<{ params: { [key: string]: string } }> {
-  return getAllSongIds().filter((file) => {
-    file.params.id?.startsWith(letter);
-  });
-}
-
-/**
- * Gets all song ids that start with a non letter character
- * @returns  object array with { params: { id: string } }
- */
-export function getAllSongIdsStartingWithNumberOrSymbol(): Array<{
-  params: { [key: string]: string };
-}> {
-  return getAllSongIds().filter((file) => {
-    /^\d/.test(file.params.id!) || /[$-/:-?{-~!"^_`\[\]]/.test(file.params.id!);
   });
 }
 

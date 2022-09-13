@@ -4,7 +4,7 @@ import {
   NextPage,
   GetStaticPropsContext,
 } from "next";
-import { getAllSongIds, getSongData } from "../../utils/song";
+import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
 
 const Song: NextPage = ({ songData }: any) => {
@@ -23,7 +23,7 @@ const Song: NextPage = ({ songData }: any) => {
 export default Song;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllSongIds();
+  const paths = getAllSongPaths();
   return {
     paths,
     fallback: false,

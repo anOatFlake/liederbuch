@@ -25,7 +25,8 @@ function maexCustomLatexToHtml(fileLine: string): string {
     return "";
 
   if (fileLine.includes("\\song") || fileLine.includes("\\multicolsong")) {
-    return (  //TODO: Into, Outro
+    return (
+      //TODO: Into, Outro
       fileLine
         .replace("\\song", "<div class='p-2'><p class='h2'>")
         .replace("\\multicolsong", "<div class='p-2'><p class='h2'>")

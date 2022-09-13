@@ -8,7 +8,7 @@ export function cleanUpTitle(id: string): string {
     .replaceAll("_", " ")
     .replaceAll("ae", "ä")
     .replaceAll("oe", "ö")
-    .replaceAll("ue", "ü");
+    .replaceAll("ue", "ü");   //TODO: stop replace on blue
 }
 
 /**

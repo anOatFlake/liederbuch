@@ -8,7 +8,7 @@ const songsDirectory = path.join(process.cwd(), "src", "songs");
  * Gets all song names (aka filenames) from the songsDirectory
  * @returns string array
  */
-export function getAllSongIds(): Array< string > {
+export function getAllSongIds(): Array<string> {
   const fileNames = fs.readdirSync(songsDirectory);
 
   return fileNames.map((fileName: string) => {
@@ -17,18 +17,20 @@ export function getAllSongIds(): Array< string > {
 }
 
 /**
- * Gets all song paths (aka filenames) from the songsDirectory 
+ * Gets all song paths (aka filenames) from the songsDirectory
  * needed for [id].getStaticPaths()
  * @returns object array with { params: { id: string } }
  */
-export function getAllSongPaths(): Array<{ params: { [key: string]: string } }> {
+export function getAllSongPaths(): Array<{
+  params: { [key: string]: string };
+}> {
   const fileNames = fs.readdirSync(songsDirectory);
 
   return fileNames.map((fileName: string) => {
     return {
       params: {
         id: fileName.replace(/\.tex$/, ""),
-      }
+      },
     };
   });
 }

@@ -5,4 +5,4 @@ const NavBar = () => {
 export default NavBar;
 
 // Login
-// Nutzer | Folgen | Alle Songs | 
+// Nutzer | Folgen | Alle Songs |

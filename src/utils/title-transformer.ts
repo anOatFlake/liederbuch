@@ -4,11 +4,18 @@
  * @returns string
  */
 export function cleanUpTitle(id: string): string {
-  return replaceSharpS(id)
-    .replaceAll("_", " ")
-    .replaceAll("ae", "ä")
-    .replaceAll("oe", "ö")
-    .replaceAll("ue", "ü"); //TODO: stop replace on blue
+  return containsEnglish(id) ? id.replaceAll("_", " ") : replaceSharpS(id)
+  .replaceAll("_", " ")
+  .replaceAll("ae", "ä")
+  .replaceAll("oe", "ö")
+  .replaceAll("ue", "ü")
+  .replaceAll("Ae", "Ä")
+  .replaceAll("Oe", "Ö")
+  .replaceAll("Ue", "Ü");
+}
+
+export function containsEnglish(id: string) {
+  return id.includes('Blue') || id.includes("pueblo") || id.includes("Feuer");
 }
 
 /**

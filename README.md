@@ -4,14 +4,16 @@ TODO:
 - [x] Song
 - [x] Songslist
 - [x] transformTitle 
-  - [ ] english edge cases
+  - [x] english edge cases
   - [ ] sorting without articles (see "Der Pinguin")
 - [ ] Navbar
 - [ ] Footer
 - [ ] Styling
+  - [ ] icon
   - [ ] Chords
   - [ ] dark mode toggle
   - [ ] language toggle
+  - [ ] responsive --> Test by unit
   - [ ] Autoanimate???
 - [ ] TranslateLatex 
   - [x] customToLatex
@@ -24,7 +26,8 @@ TODO:
     - [ ] profile
     - [ ] repertoire dispaly
     - [ ] buttons for adding and removing songs to repertoire
-    - [ ] set password for singers
+    - [ ] set password for singers ???
+    - [ ] generate qr code
   - [ ] "login" singer 
     - [ ] display followed players repertoire
 - [ ] follow me page
@@ -34,3 +37,11 @@ TODO:
   - [ ] by text simalarity?
 - [ ] actually deploying it
 - [ ] far future: stress test user
+
+
+DB -> 
+  id
+  mail
+  pw for singer
+
+  songId-userId

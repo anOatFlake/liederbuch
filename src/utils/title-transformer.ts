@@ -4,7 +4,7 @@
  * @returns string
  */
 export function cleanUpTitle(id: string): string {
-  return containsEnglish(id) ? id.replaceAll("_", " ") : replaceSharpS(id)
+  return containsWhiteListedWord(id) ? id.replaceAll("_", " ") : replaceSharpS(id)
   .replaceAll("_", " ")
   .replaceAll("ae", "ä")
   .replaceAll("oe", "ö")
@@ -19,7 +19,7 @@ export function cleanUpTitle(id: string): string {
  * @param id string
  * @returns boolean
  */
-export function containsEnglish(id: string) {
+export function containsWhiteListedWord(id: string) {
   return id.includes('Blue') || id.includes("pueblo") || id.includes("Feuer");
 }
 

@@ -14,6 +14,11 @@ export function cleanUpTitle(id: string): string {
   .replaceAll("Ue", "Ü");
 }
 
+/**
+ * this function determits if the title contains a whitelisted word
+ * @param id string
+ * @returns boolean
+ */
 export function containsEnglish(id: string) {
   return id.includes('Blue') || id.includes("pueblo") || id.includes("Feuer");
 }

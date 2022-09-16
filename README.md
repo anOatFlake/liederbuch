@@ -5,7 +5,6 @@ TODO:
 - [x] Songslist
 - [x] transformTitle 
   - [x] english edge cases
-  - [ ] sorting without articles (see "Der Pinguin")
 - [ ] Navbar
 - [ ] Footer
 - [ ] Styling
@@ -28,6 +27,7 @@ TODO:
     - [ ] buttons for adding and removing songs to repertoire
     - [ ] set password for singers ???
     - [ ] generate qr code
+    - [ ] import from ultimateguitar?
   - [ ] "login" singer 
     - [ ] display followed players repertoire
 - [ ] follow me page
@@ -42,6 +42,8 @@ TODO:
 DB -> 
   id
   mail
+  login pw (hash)
   pw for singer
 
   songId-userId
+  

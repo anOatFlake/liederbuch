@@ -3,7 +3,7 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <>
-      <div className="flex container sticky top-0 bg-slate-500 dark:bg-slate-800 p-4 justify-end">
+      <div className="flex  sticky top-0 left-0 right-0 bg-slate-500 dark:bg-slate-800 p-4 justify-end">
         <div className="px-2">
           <Link href={'/currentSong'}>
             <a>Folgen</a>

@@ -3,6 +3,9 @@ import Link from "next/link";
 import { getAllSongIds } from "../../utils/song";
 import { cleanUpTitle } from "../../utils/title-transformer";
 import { createContext, useContext, useState } from "react";
+import Head from "next/head";
+import NavBar from "../../components/navbar";
+import Footer from "../../components/footer";
 
 const Songs: NextPage = ({ songs }: any) => {
   const [songList, setSongList] = useState(songs);
@@ -68,6 +71,15 @@ const Songs: NextPage = ({ songs }: any) => {
 
   return (
     <>
+    <Head>
+      <title>Liederbuchliste</title>
+      <meta name="description" content="List of all songs" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+
+    <NavBar/>
+
+    <main>
       <SongContext.Provider value={songs}>
         <div className="max-w-sm md:container mx-auto">
           <ButtonList />
@@ -82,6 +94,9 @@ const Songs: NextPage = ({ songs }: any) => {
           </ul>
         </div>
       </SongContext.Provider>
+      </main>
+
+      <Footer/>
     </>
   );
 };

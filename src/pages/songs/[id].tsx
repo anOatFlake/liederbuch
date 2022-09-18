@@ -6,16 +6,22 @@ import {
 } from "next";
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
+import NavBar from "../../components/navbar";
+import Footer from "../../components/footer";
 
 const Song: NextPage = ({ songData }: any) => {
   return (
     <>
       <Head>
         <title>{songData.id}</title>
-        <meta name="{songData.id}" content=""></meta>
+        <meta name="description" content="Songtext for the song {songData.id}"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NavBar/>
+      <main>
       <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
+      </main>
+      <Footer/>
     </>
   );
 };

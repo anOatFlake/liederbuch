@@ -21,7 +21,6 @@ const Song: NextPage = ({ songData }: any) => {
       <main>
       <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
       </main>
-      <Footer/>
     </>
   );
 };

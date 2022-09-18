@@ -5,8 +5,8 @@ TODO:
 - [x] Songslist
 - [x] transformTitle 
   - [x] english edge cases
-- [ ] Navbar
-- [ ] Footer
+- [x] Navbar
+- [x] Footer
 - [ ] Styling
   - [ ] icon
   - [ ] Chords
@@ -30,6 +30,7 @@ TODO:
     - [ ] import from ultimateguitar?
   - [ ] "login" singer 
     - [ ] display followed players repertoire
+    - [ ] suggestions to guitarplayer?
 - [ ] follow me page
   - [ ] follow me update
 - [ ] search bar

@@ -23,7 +23,7 @@ const Songs: NextPage = ({ songs }: any) => {
       "G",
       "H",
       "I",
-      "H",
+      "JS",
       "K",
       "L",
       "M",
@@ -95,8 +95,6 @@ const Songs: NextPage = ({ songs }: any) => {
         </div>
       </SongContext.Provider>
       </main>
-
-      <Footer/>
     </>
   );
 };

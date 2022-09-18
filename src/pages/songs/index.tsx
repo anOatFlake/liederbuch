@@ -1,6 +1,5 @@
 import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { getAllSongIds } from "../../utils/song";
 import { cleanUpTitle } from "../../utils/title-transformer";
 import { createContext, useContext, useState } from "react";
@@ -42,11 +41,11 @@ const Songs: NextPage = ({ songs }: any) => {
     const songs = useContext(SongContext);
 
     return (
-      <div>
+      <div className="flex justify-around">
         {letters.map((letter) => (
           <button
             onClick={() =>
-              letter !== "0-9"
+              {letter !== "0-9"
                 ? setSongList(
                     songs.filter((songName: string) => {
                       return songName.startsWith(letter);
@@ -56,7 +55,8 @@ const Songs: NextPage = ({ songs }: any) => {
                     songs.filter((songName: string) => {
                       return /^\d/.test(songName) || /^\W/.test(songName);
                     })
-                  )
+                  ); 
+              }
             }
           >
             {letter}
@@ -69,19 +69,18 @@ const Songs: NextPage = ({ songs }: any) => {
   return (
     <>
       <SongContext.Provider value={songs}>
-        <div>
+        <div className="max-w-sm md:container mx-auto">
           <ButtonList />
+          <ul>
+            {songList.map((song: string) => (
+              <li className="pb-1 pl-2">
+                <Link href={`/songs/${encodeURIComponent(song)}`}>
+                  <a>{cleanUpTitle(song)}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <ul className="md:container md:mx-auto">
-          {songList.map((song: string) => (
-            <li>
-              <Link href={`/songs/${encodeURIComponent(song)}`}>
-                <a>{cleanUpTitle(song)}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </SongContext.Provider>
     </>
   );

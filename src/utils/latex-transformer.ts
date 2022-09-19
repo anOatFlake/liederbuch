@@ -22,7 +22,7 @@ function maexCustomLatexToHtml(fileLine: string): string {
     fileLine.includes("\\begin{document}") ||
     fileLine.includes("\\end{document}")
   )
-    return "";
+    return "<div>";
 
   if (fileLine.includes("\\song") || fileLine.includes("\\multicolsong")) {
     return (
@@ -60,6 +60,8 @@ function maexCustomLatexToHtml(fileLine: string): string {
     return fileLine
       .replace("\\li{", '<p class="line line-li">')
       .replace("}", "</p>\n")
+      .replace("\\brep", "|: ")
+      .replace("\\erep", " :|")
       .replaceAll("\\", ' <span class="chord" data-star="">')
       .replaceAll("[]", "</span>")
       .replaceAll("[", "")

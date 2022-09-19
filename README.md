@@ -8,7 +8,7 @@ TODOs:
 - [x] Navbar
 - [x] Footer
 - [ ] Styling
-  - [ ] icon
+  - [x] icon
   - [ ] **Chords**
   - [ ] dark mode toggle
   - [ ] language toggle

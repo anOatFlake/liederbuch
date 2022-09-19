@@ -1,6 +1,6 @@
-This is an app which is a songbook collection with guitar chords.
+This is an app is a songbook collection with guitar chords, where the singers are able to follow the guitar player.
 
-TODO: 
+TODOs: 
 - [x] Song
 - [x] Songslist
 - [x] transformTitle 
@@ -9,30 +9,30 @@ TODO:
 - [x] Footer
 - [ ] Styling
   - [ ] icon
-  - [ ] Chords
+  - [ ] **Chords**
   - [ ] dark mode toggle
   - [ ] language toggle
-  - [ ] responsive --> Test by unit
-  - [ ] Autoanimate???
-- [ ] TranslateLatex 
+  - [ ] **responsive** --> Test by unit
+  - [ ] Autoanimate??? --> for adding/removing songs to reportaire
+- [x] TranslateLatex 
   - [x] customToLatex
-  - [ ] intro/outro
-  - [ ] meadly
-- [ ] database for user profiles
-- [ ] nextAuth-Login 
+  - [ ] **intro/outro**
+  - [ ] **meadly**
+- [ ] **database for user profiles**
+- [ ] **nextAuth-Login**
   - [ ] general stuff 
-  - [ ] login player
-    - [ ] profile
-    - [ ] repertoire dispaly
-    - [ ] buttons for adding and removing songs to repertoire
+  - [ ] **login player**
+    - [ ] **profile**
+    - [ ] **repertoire dispaly**
+    - [ ] **buttons for adding and removing songs to repertoire**
     - [ ] set password for singers ???
     - [ ] generate qr code
     - [ ] import from ultimateguitar?
-  - [ ] "login" singer 
-    - [ ] display followed players repertoire
+  - [ ] **"login" singer**
+    - [ ] **display followed players repertoire**
     - [ ] suggestions to guitarplayer?
-- [ ] follow me page
-  - [ ] follow me update
+- [ ] **follow me page**
+  - [ ] **follow me update**
 - [ ] search bar
   - [ ] by title
   - [ ] by text simalarity?

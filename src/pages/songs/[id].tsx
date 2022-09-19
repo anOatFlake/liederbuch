@@ -14,12 +14,15 @@ const Song: NextPage = ({ songData }: any) => {
     <>
       <Head>
         <title>{songData.id}</title>
-        <meta name="description" content="Songtext for the song {songData.id}"></meta>
+        <meta
+          name="description"
+          content="Songtext for the song {songData.id}"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar/>
+      <NavBar />
       <main>
-      <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
       </main>
     </>
   );

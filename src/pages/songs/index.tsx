@@ -23,7 +23,7 @@ const Songs: NextPage = ({ songs }: any) => {
       "G",
       "H",
       "I",
-      "JS",
+      "J",
       "K",
       "L",
       "M",

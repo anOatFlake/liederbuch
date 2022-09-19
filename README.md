@@ -16,8 +16,8 @@ TODOs:
   - [ ] Autoanimate??? --> for adding/removing songs to reportaire
 - [x] TranslateLatex 
   - [x] customToLatex
-  - [ ] **intro/outro**
-  - [ ] **meadly**
+  - [x] intro/outro
+  - [x] meadly
 - [ ] **database for user profiles**
 - [ ] **nextAuth-Login**
   - [ ] general stuff 
@@ -38,7 +38,7 @@ TODOs:
   - [ ] by text simalarity?
 - [ ] actually deploying it
 - [ ] far future: stress test user
-
+- [ ] **logging**
 
 DB -> 
   id

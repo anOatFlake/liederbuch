@@ -4,14 +4,16 @@
  * @returns string
  */
 export function cleanUpTitle(id: string): string {
-  return containsWhiteListedWord(id) ? id.replaceAll("_", " ") : replaceSharpS(id)
-  .replaceAll("_", " ")
-  .replaceAll("ae", "ä")
-  .replaceAll("oe", "ö")
-  .replaceAll("ue", "ü")
-  .replaceAll("Ae", "Ä")
-  .replaceAll("Oe", "Ö")
-  .replaceAll("Ue", "Ü");
+  return containsWhiteListedWord(id)
+    ? id.replaceAll("_", " ")
+    : replaceSharpS(id)
+        .replaceAll("_", " ")
+        .replaceAll("ae", "ä")
+        .replaceAll("oe", "ö")
+        .replaceAll("ue", "ü")
+        .replaceAll("Ae", "Ä")
+        .replaceAll("Oe", "Ö")
+        .replaceAll("Ue", "Ü");
 }
 
 /**
@@ -20,7 +22,7 @@ export function cleanUpTitle(id: string): string {
  * @returns boolean
  */
 export function containsWhiteListedWord(id: string) {
-  return id.includes('Blue') || id.includes("pueblo") || id.includes("Feuer");
+  return id.includes("Blue") || id.includes("pueblo") || id.includes("Feuer");
 }
 
 /**

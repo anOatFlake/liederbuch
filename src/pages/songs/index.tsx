@@ -47,8 +47,8 @@ const Songs: NextPage = ({ songs }: any) => {
       <div className="flex justify-around">
         {letters.map((letter) => (
           <button
-            onClick={() =>
-              {letter !== "0-9"
+            onClick={() => {
+              letter !== "0-9"
                 ? setSongList(
                     songs.filter((songName: string) => {
                       return songName.startsWith(letter);
@@ -58,9 +58,8 @@ const Songs: NextPage = ({ songs }: any) => {
                     songs.filter((songName: string) => {
                       return /^\d/.test(songName) || /^\W/.test(songName);
                     })
-                  ); 
-              }
-            }
+                  );
+            }}
           >
             {letter}
           </button>
@@ -71,29 +70,29 @@ const Songs: NextPage = ({ songs }: any) => {
 
   return (
     <>
-    <Head>
-      <title>Liederbuchliste</title>
-      <meta name="description" content="List of all songs" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+      <Head>
+        <title>Liederbuchliste</title>
+        <meta name="description" content="List of all songs" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    <NavBar/>
+      <NavBar />
 
-    <main>
-      <SongContext.Provider value={songs}>
-        <div className="max-w-sm md:container mx-auto">
-          <ButtonList />
-          <ul>
-            {songList.map((song: string) => (
-              <li className="pb-1 pl-2">
-                <Link href={`/songs/${encodeURIComponent(song)}`}>
-                  <a>{cleanUpTitle(song)}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </SongContext.Provider>
+      <main>
+        <SongContext.Provider value={songs}>
+          <div className="mx-auto max-w-sm md:container">
+            <ButtonList />
+            <ul>
+              {songList.map((song: string) => (
+                <li className="pb-1 pl-2">
+                  <Link href={`/songs/${encodeURIComponent(song)}`}>
+                    <a>{cleanUpTitle(song)}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </SongContext.Provider>
       </main>
     </>
   );

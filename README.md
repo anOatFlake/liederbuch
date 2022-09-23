@@ -12,15 +12,16 @@ TODOs:
   - [ ] **Chords**
   - [ ] dark mode toggle
   - [ ] language toggle
-  - [ ] **responsive** --> Test by unit
+  - [x] responsive
   - [ ] Autoanimate??? --> for adding/removing songs to reportaire
 - [x] TranslateLatex 
   - [x] customToLatex
   - [x] intro/outro
   - [x] meadly
-- [ ] **database for user profiles**
+- [x] database for user profiles
 - [ ] **nextAuth-Login**
   - [ ] general stuff 
+  - [ ] smtp account
   - [ ] **login player**
     - [ ] **profile**
     - [ ] **repertoire dispaly**

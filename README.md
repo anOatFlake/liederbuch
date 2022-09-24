@@ -9,7 +9,7 @@ TODOs:
 - [x] Footer
 - [ ] Styling
   - [x] icon
-  - [ ] **Chords**
+  - [x] Chords
   - [ ] dark mode toggle
   - [ ] language toggle
   - [x] responsive
@@ -18,6 +18,7 @@ TODOs:
   - [x] customToLatex
   - [x] intro/outro
   - [x] meadly
+  - [ ] remove translateLatex and transform the files to html
 - [x] database for user profiles
 - [ ] **nextAuth-Login**
   - [ ] general stuff 
@@ -39,13 +40,4 @@ TODOs:
   - [ ] by text simalarity?
 - [ ] actually deploying it
 - [ ] far future: stress test user
-- [ ] **logging**
-
-DB -> 
-  id
-  mail
-  login pw (hash)
-  pw for singer
-
-  songId-userId
-  
+- [ ] **logging**  

@@ -1,9 +1,5 @@
 const CurrentSong = () => {
-    return (
-      <>
-      </>
-    );
-  };
-  
-  export default CurrentSong;
-  
+  return <></>;
+};
+
+export default CurrentSong;

@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       <div className="sticky top-0 left-0 right-0 flex justify-end bg-slate-500 p-4 dark:bg-slate-800">
-        <div className="px-2">
+        <div className="invisible px-2">
           <Link href={"/currentSong"}>
             <a>Folgen</a>
           </Link>
@@ -14,7 +14,7 @@ const NavBar = () => {
             <a>Liste</a>
           </Link>
         </div>
-        <div className="px-2">
+        <div className="invisible px-2">
           <Link href={"/profile"} className="px-2">
             <a>Profil</a>
           </Link>

@@ -95,7 +95,6 @@ const Songs: NextPage = ({ songs }: any) => {
           </div>
         </SongContext.Provider>
       </main>
-      <Footer />
     </>
   );
 };

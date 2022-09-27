@@ -62,7 +62,10 @@ function maexCustomLatexToHtml(fileLine: string): string {
       .replace("}", "</p>\n")
       .replace("\\brep", "|: ")
       .replace("\\erep", " :|")
-      .replaceAll("\\", ' <span class="relative -top-4 inline-block w-0" data-star="">')
+      .replaceAll(
+        "\\",
+        ' <span class="relative -top-4 inline-block w-0" data-star="">'
+      )
       .replaceAll("[]", "</span>")
       .replaceAll("[", "")
       .replaceAll("]", "</span>");
@@ -70,7 +73,7 @@ function maexCustomLatexToHtml(fileLine: string): string {
 
   if (fileLine.includes("\\chli{")) {
     return fileLine
-      .replace("\\chli{", '<p>')
+      .replace("\\chli{", "<p>")
       .replace("}", "</p>\n")
       .replaceAll("\\", ' <span class="" data-star="">')
       .replaceAll("[]", "</span>")
@@ -87,10 +90,7 @@ function maexCustomLatexToHtml(fileLine: string): string {
       .replace("}", "x</p>\n");
 
   if (fileLine.includes("\\footer{"))
-    return fileLine.replace(
-      "\\footer{",
-      '<br><hr><br><div><div class="">'
-    );
+    return fileLine.replace("\\footer{", '<br><hr><br><div><div class="">');
 
   if (fileLine.trim().includes("}")) return fileLine.replace("}", "</div>\n");
 

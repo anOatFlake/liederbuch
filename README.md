@@ -38,6 +38,6 @@ TODOs:
 - [ ] search bar
   - [ ] by title
   - [ ] by text simalarity?
-- [ ] actually deploying it
+- [x] actually deploying it
 - [ ] far future: stress test user
 - [ ] **logging**  

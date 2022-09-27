@@ -42,7 +42,7 @@ export function getAllSongPaths(): Array<{
  */
 export async function getSongData(id: string | string[] | undefined) {
   const fullPath = path.join(songsDirectory, `${id}.tex`);
-  let fileContents = fs.readFileSync(fullPath, `utf-8`);
+  const fileContents = fs.readFileSync(fullPath, `utf-8`);
   const contentHtml = latexToHtml(fileContents);
   return {
     id,

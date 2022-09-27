@@ -45,8 +45,9 @@ const Songs: NextPage = ({ songs }: any) => {
 
     return (
       <div className="flex justify-around">
-        {letters.map((letter) => (
+        {letters.map((letter: string, index: number) => (
           <button
+            key={index}
             onClick={() => {
               letter !== "0-9"
                 ? setSongList(
@@ -83,8 +84,8 @@ const Songs: NextPage = ({ songs }: any) => {
           <div className="mx-auto max-w-sm md:container">
             <ButtonList />
             <ul>
-              {songList.map((song: string) => (
-                <li className="pb-1 pl-2">
+              {songList.map((song: string, index: number) => (
+                <li key={index} className="pb-1 pl-2">
                   <Link href={`/songs/${encodeURIComponent(song)}`}>
                     <a>{cleanUpTitle(song)}</a>
                   </Link>

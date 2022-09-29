@@ -3,7 +3,7 @@ import os
 directory = os.getcwd() + "\\tex\\"
 for filename in os.listdir(directory):
     latexPath = os.path.join(directory, filename)
-    if os.path.isfile(f):
+    if os.path.isfile(latexPath):
         htmlPath = os.path.join(os.getcwd(), filename)
         latexFile = open(latexPath, "r")
         htmlFile = open(htmlPath, "w")
@@ -18,7 +18,6 @@ for filename in os.listdir(directory):
 
             htmlLine = latexFile.replace()
             htmlFile.write(htmlLine)
-
 
         htmlFile.close()
         latexFile.close()

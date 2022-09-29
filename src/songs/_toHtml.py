@@ -19,5 +19,6 @@ for filename in os.listdir(directory):
             htmlLine = latexFile.replace()
             htmlFile.write(htmlLine)
 
+
         htmlFile.close()
         latexFile.close()

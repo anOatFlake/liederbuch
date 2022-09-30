@@ -5,3 +5,25 @@
 body {
   @apply bg-slate-200 text-gray-800 dark:bg-gray-900 dark:text-slate-300;
 }
+
+.chord {
+  @apply relative -top-4 inline-block w-0
+}
+.line {
+  @apply leading-9 mb-8
+}
+
+@layer components {
+  .song {
+    @apply p-2
+  }
+  .verse {
+    @apply p-2
+  }
+  .bridge {
+    @apply p-2
+  }
+  .chorus {
+    @apply p-4
+  }
+}

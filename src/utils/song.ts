@@ -12,7 +12,7 @@ export function getAllSongIds(): Array<string> {
   const fileNames = fs.readdirSync(songsDirectory);
 
   return fileNames.map((fileName: string) => {
-    return fileName.replace(/\.tex$/, "");
+    return fileName.replace(/\.html$/, "");
   });
 }
 
@@ -29,7 +29,7 @@ export function getAllSongPaths(): Array<{
   return fileNames.map((fileName: string) => {
     return {
       params: {
-        id: fileName.replace(/\.tex$/, ""),
+        id: fileName.replace(/\.html$/, ""),
       },
     };
   });
@@ -41,9 +41,8 @@ export function getAllSongPaths(): Array<{
  * @returns songdata object { id, contentHtml }
  */
 export async function getSongData(id: string | string[] | undefined) {
-  const fullPath = path.join(songsDirectory, `${id}.tex`);
-  const fileContents = fs.readFileSync(fullPath, `utf-8`);
-  const contentHtml = latexToHtml(fileContents);
+  const fullPath = path.join(songsDirectory, `${id}.html`);
+  const contentHtml = fs.readFileSync(fullPath, `utf-8`);
   return {
     id,
     contentHtml,

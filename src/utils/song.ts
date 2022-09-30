@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import { latexToHtml } from "./latex-transformer";
 
 const songsDirectory = path.join(process.cwd(), "src", "songs");
 

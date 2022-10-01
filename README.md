@@ -10,6 +10,7 @@ TODOs:
 - [ ] Styling
   - [x] icon
   - [x] Chords
+  - [x] fix Chords nav bug
   - [ ] dark mode toggle
   - [ ] language toggle
   - [x] responsive
@@ -18,7 +19,8 @@ TODOs:
   - [x] customToLatex
   - [x] intro/outro
   - [x] meadly
-  - [ ] remove translateLatex and transform the files to html
+  - [x] remove translateLatex and transform the files to html
+  - [ ] **clean up songs**
 - [x] database for user profiles
 - [ ] **nextAuth-Login**
   - [ ] general stuff 

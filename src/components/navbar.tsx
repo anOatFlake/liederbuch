@@ -3,7 +3,7 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <>
-      <div className="sticky z-1 top-0 left-0 right-0 flex justify-end bg-slate-500 p-4 dark:bg-slate-800">
+      <div className="sticky z-10 top-0 left-0 right-0 flex justify-end bg-slate-500 p-4 dark:bg-slate-800">
         <div className="invisible px-2">
           <Link href={"/currentSong"}>
             <a>Folgen</a>

@@ -11,6 +11,8 @@ TODOs:
   - [x] icon
   - [x] Chords
   - [x] fix Chords nav bug
+  - [ ] change letter style
+  - [ ] Letter list sidebar???
   - [ ] dark mode toggle
   - [ ] language toggle
   - [x] responsive
@@ -39,7 +41,7 @@ TODOs:
   - [ ] **follow me update**
 - [ ] search bar
   - [ ] by title
-  - [ ] by text simalarity?
+  - [ ] by text simalarity
 - [x] actually deploying it
 - [ ] far future: stress test user
 - [ ] **logging**  

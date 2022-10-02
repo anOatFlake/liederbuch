@@ -16,6 +16,6 @@ export const exampleRouter = createRouter()
   })
   .query("getAll", {
     async resolve({ ctx }) {
-      return await ctx.prisma.user.findMany();    //used to be example but i removed example from the db schema
+      return await ctx.prisma.user.findMany(); //used to be example but i removed example from the db schema
     },
   });

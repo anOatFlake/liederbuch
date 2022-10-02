@@ -7,23 +7,23 @@ body {
 }
 
 .chord {
-  @apply relative -top-4 inline-block w-0
+  @apply relative -top-4 inline-block w-0;
 }
 .line {
-  @apply leading-9 mb-8
+  @apply mb-2 p-0 leading-9;
 }
 
 @layer components {
   .song {
-    @apply p-2
+    @apply p-2;
   }
   .verse {
-    @apply p-2
+    @apply p-2;
   }
   .bridge {
-    @apply p-2
+    @apply p-2;
   }
   .chorus {
-    @apply p-4
+    @apply p-4;
   }
 }

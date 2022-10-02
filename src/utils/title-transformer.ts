@@ -22,7 +22,12 @@ export function cleanUpTitle(id: string): string {
  * @returns boolean
  */
 export function containsWhiteListedWord(id: string) {
-  return id.includes("Blue") || id.includes("pueblo") || id.includes("Feuer") || id.includes("Bauer");
+  return (
+    id.includes("Blue") ||
+    id.includes("pueblo") ||
+    id.includes("Feuer") ||
+    id.includes("Bauer")
+  );
 }
 
 /**

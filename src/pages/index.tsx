@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <div className="invisible">
+      <div className="">
         {!session && (
           <Link href="/api/auth/signin">
             <a>SIGN IN</a>

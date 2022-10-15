@@ -6,6 +6,7 @@ import { createContext, useContext, useState } from "react";
 import Head from "next/head";
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
+import SideBar from "../../components/sidebar";
 
 const Songs: NextPage = ({ songs }: any) => {
   const [songList, setSongList] = useState(songs);
@@ -76,10 +77,8 @@ const Songs: NextPage = ({ songs }: any) => {
         <meta name="description" content="List of all songs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <NavBar />
-
-      <main>
+      <SideBar />
+      <main className="pl-60">
         <SongContext.Provider value={songs}>
           <div className="mx-auto max-w-sm md:container">
             <ButtonList />

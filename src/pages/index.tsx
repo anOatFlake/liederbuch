@@ -23,8 +23,7 @@ const Home: NextPage = () => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
-      <div className="">
+      <div className="pl-60">
         {!session && (
           <Link href="/api/auth/signin">
             <a>SIGN IN</a>

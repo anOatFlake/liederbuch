@@ -2,10 +2,7 @@ import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
 import { getAllSongIds } from "../../utils/song";
 import { cleanUpTitle } from "../../utils/title-transformer";
-import { createContext, useContext, useState } from "react";
 import Head from "next/head";
-import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
 import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
 

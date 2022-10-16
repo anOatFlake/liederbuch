@@ -1,69 +1,66 @@
 import Link from "next/link";
 
 const SideBar = () => {
-    const letters = [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-        "0-9",
-    ];
-    return (
-        <>
-        <nav className="top-0 w-52 h-full shadow-md p-4 bg-slate-800/10 fixed">
-            <div className="px-2">
-                <Link href={"/profile"} className="px-2">
-                    <a>Profil</a>
-                </Link>
+  const letters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "0-9",
+  ];
+  return (
+    <>
+      <nav className="fixed top-0 h-full w-52 bg-slate-800/10 p-4 shadow-md">
+        <div className="px-2">
+          <Link href={"/profile"} className="px-2">
+            <a>Profil</a>
+          </Link>
+        </div>
+        <div className="mt-4 px-2">
+          <Link href={"/currentSong"}>
+            <a>Folgen</a>
+          </Link>
+        </div>
+
+        <div className="mt-8 px-2">
+          <Link href={"/songs"} className="px-2">
+            <a>Liste</a>
+          </Link>
+        </div>
+        <div className="grid grid-cols-6 px-2">
+          {letters.map((letter: string, index: number) => (
+            <div className="p-1 text-center">
+              <Link href={"/songs?letter=" + letter}>
+                <a>{letter}</a>
+              </Link>
             </div>
-            <div className="px-2 mt-4">
-                <Link href={"/currentSong"}>
-                    <a>Folgen</a>
-                </Link>
-            </div>
-            
-            <div className="px-2 mt-8">
-                <Link href={"/songs"} className="px-2">
-                    <a>Liste</a>
-                </Link>
-            </div>
-            <div className="grid grid-cols-6 px-2"> 
-                {letters.map((letter: string, index: number) => (
-                <button className="p-1"
-                    key={index}
-                    onClick={() => {
-                    
-                    }}
-                >
-                    {letter}
-                </button>
-                ))}
-            </div>
-        </nav>
-        </>
-    )
+          ))}
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default SideBar;

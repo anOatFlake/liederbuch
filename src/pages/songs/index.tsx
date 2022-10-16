@@ -7,68 +7,22 @@ import Head from "next/head";
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
 import SideBar from "../../components/sidebar";
+import { useRouter } from "next/router";
 
 const Songs: NextPage = ({ songs }: any) => {
-  const [songList, setSongList] = useState(songs);
-  const SongContext = createContext(songs);
+  const router = useRouter();
+  const { letter } = router.query;
 
-  const ButtonList = () => {
-    const letters = [
-      "0-9",
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G",
-      "H",
-      "I",
-      "J",
-      "K",
-      "L",
-      "M",
-      "N",
-      "O",
-      "P",
-      "Q",
-      "R",
-      "S",
-      "T",
-      "U",
-      "V",
-      "W",
-      "X",
-      "Y",
-      "Z",
-    ];
-    const songs = useContext(SongContext);
-
-    return (
-      <div className="flex justify-around">
-        {letters.map((letter: string, index: number) => (
-          <button
-            key={index}
-            onClick={() => {
-              letter !== "0-9"
-                ? setSongList(
-                    songs.filter((songName: string) => {
-                      return songName.startsWith(letter);
-                    })
-                  )
-                : setSongList(
-                    songs.filter((songName: string) => {
-                      return /^\d/.test(songName) || /^\W/.test(songName);
-                    })
-                  );
-            }}
-          >
-            {letter}
-          </button>
-        ))}
-      </div>
-    );
-  };
+  const songList = letter
+    ? letter !== "0-9"
+      ? songs.filter((songName: string) => {
+          //@ts-ignore
+          return songName.startsWith(letter);
+        })
+      : songs.filter((songName: string) => {
+          return /^\d/.test(songName) || /^\W/.test(songName);
+        })
+    : songs;
 
   return (
     <>
@@ -79,20 +33,17 @@ const Songs: NextPage = ({ songs }: any) => {
       </Head>
       <SideBar />
       <main className="pl-60">
-        <SongContext.Provider value={songs}>
-          <div className="mx-auto max-w-sm md:container">
-            <ButtonList />
-            <ul>
-              {songList.map((song: string, index: number) => (
-                <li key={index} className="pb-1 pl-2">
-                  <Link href={`/songs/${encodeURIComponent(song)}`}>
-                    <a>{cleanUpTitle(song)}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </SongContext.Provider>
+        <div className="mx-auto max-w-sm md:container">
+          <ul>
+            {songList.map((song: string, index: number) => (
+              <li key={index} className="pb-1 pl-2">
+                <Link href={`/songs/${encodeURIComponent(song)}`}>
+                  <a>{cleanUpTitle(song)}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </main>
     </>
   );

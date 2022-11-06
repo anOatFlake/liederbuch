@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { getAllSongIds } from "../../utils/song";
 import { cleanUpTitle } from "../../utils/title-transformer";
@@ -13,8 +13,7 @@ const Songs: NextPage = ({ songs }: any) => {
   const songList = letter
     ? letter !== "0-9"
       ? songs.filter((songName: string) => {
-          //@ts-ignore
-          return songName.startsWith(letter);
+          return songName.startsWith(letter.toString());
         })
       : songs.filter((songName: string) => {
           return /^\d/.test(songName) || /^\W/.test(songName);
@@ -47,9 +46,7 @@ const Songs: NextPage = ({ songs }: any) => {
 };
 export default Songs;
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-}: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps = async () => {
   const songs = await getAllSongIds();
   return {
     props: {

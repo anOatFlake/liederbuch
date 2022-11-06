@@ -7,7 +7,6 @@ import {
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
 import NavBar from "../../components/navbar";
-import Footer from "../../components/footer";
 
 const Song: NextPage = ({ songData }: any) => {
   return (

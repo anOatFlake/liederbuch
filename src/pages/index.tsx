@@ -3,8 +3,6 @@ import { useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Head from "next/head";
 import Link from "next/link";
-import NavBar from "../components/navbar";
-import Songs from "./songs";
 
 const Home: NextPage = () => {
   const { data: hello } = trpc.useQuery([

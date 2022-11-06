@@ -50,9 +50,14 @@ const SideBar = () => {
           </Link>
         </div>
         <div className="grid grid-cols-6 px-2">
-          {letters.map((letter: string, index: number) => (
-            <div className="p-1 text-center">
-              <Link href={"/songs?letter=" + letter}>
+          {letters.map((letter: string) => (
+            <div key={letter} className="p-1 text-center">
+              <Link
+                href={{
+                  pathname: "/songs",
+                  query: { letter: letter },
+                }}
+              >
                 <a>{letter}</a>
               </Link>
             </div>

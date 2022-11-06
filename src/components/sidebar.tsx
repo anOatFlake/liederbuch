@@ -35,18 +35,18 @@ const SideBar = () => {
       <nav className="fixed top-0 h-full w-52 bg-slate-800/10 p-4 shadow-md">
         <div className="px-2">
           <Link href={"/profile"} className="px-2">
-            <a>Profil</a>
+            Profil
           </Link>
         </div>
         <div className="mt-4 px-2">
           <Link href={"/currentSong"}>
-            <a>Folgen</a>
+            Folgen
           </Link>
         </div>
 
         <div className="mt-8 px-2">
           <Link href={"/songs"} className="px-2">
-            <a>Liste</a>
+            Liste
           </Link>
         </div>
         <div className="grid grid-cols-6 px-2">
@@ -58,7 +58,7 @@ const SideBar = () => {
                   query: { letter: letter },
                 }}
               >
-                <a>{letter}</a>
+                {letter}
               </Link>
             </div>
           ))}

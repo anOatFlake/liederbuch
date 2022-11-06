@@ -6,17 +6,17 @@ const NavBar = () => {
       <div className="sticky top-0 inset-x-0 z-10 flex justify-end bg-slate-300 p-3 dark:bg-slate-800">
         <div className="invisible px-2">
           <Link href={"/currentSong"}>
-            <a>Folgen</a>
+            Folgen
           </Link>
         </div>
         <div className="px-2">
           <Link href={"/songs"} className="px-2">
-            <a>Liste</a>
+            Liste
           </Link>
         </div>
         <div className="invisible px-2">
           <Link href={"/profile"} className="px-2">
-            <a>Profil</a>
+            Profil
           </Link>
         </div>
       </div>

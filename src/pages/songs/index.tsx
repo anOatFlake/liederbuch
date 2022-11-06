@@ -34,7 +34,7 @@ const Songs: NextPage = ({ songs }: any) => {
             {songList.map((song: string, index: number) => (
               <li key={index} className="pb-1 pl-2">
                 <Link href={`/songs/${encodeURIComponent(song)}`}>
-                  <a>{cleanUpTitle(song)}</a>
+                  {cleanUpTitle(song)}
                 </Link>
               </li>
             ))}

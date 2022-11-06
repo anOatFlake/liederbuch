@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { getAllSongIds } from "../../utils/song";
 import { cleanUpTitle } from "../../utils/title-transformer";

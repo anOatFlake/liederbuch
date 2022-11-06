@@ -5,10 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 const Home: NextPage = () => {
-  const { data: hello } = trpc.useQuery([
-    "example.hello",
-    { text: "from tRPC" },
-  ]);
+  const { data: hello } = trpc.example.hello.useQuery({ text: "from tRPC" });
   const { data: session } = useSession();
 
   return (

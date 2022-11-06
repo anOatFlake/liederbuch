@@ -6,7 +6,6 @@ import SideBar from "../components/sidebar";
 import "../styles/globals.css";
 import { trpc } from "../utils/trpc";
 
-
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },

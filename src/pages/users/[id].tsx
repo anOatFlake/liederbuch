@@ -8,5 +8,6 @@ const User = () => {
     return <p>SIGN IN</p>;
   }
 
-  return <p>Welcome {session!.user?.name}!</p>;
+  return <p>Welcome {session.user?.name}!</p>;
 };
+export default User;

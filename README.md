@@ -24,8 +24,8 @@ TODOs:
   - [x] remove translateLatex and transform the files to html
   - [ ] **clean up songs**
 - [x] database for user profiles
-- [ ] **nextAuth-Login**
-  - [ ] general stuff 
+- [ ] nextAuth-Login
+  - [x] general stuff 
   - [ ] smtp account
   - [ ] **login player**
     - [ ] **profile**

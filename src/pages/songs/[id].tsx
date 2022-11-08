@@ -6,7 +6,7 @@ import type {
 } from "next";
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
-import NavBar from "../../components/navbar";
+import SideBar from "../../components/sidebar";
 
 const Song: NextPage = ({ songData }: any) => {
   return (
@@ -19,7 +19,7 @@ const Song: NextPage = ({ songData }: any) => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <SideBar />
       <main>
         <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
       </main>

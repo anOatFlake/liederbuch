@@ -1,32 +1,21 @@
 This is an app is a songbook collection with guitar chords, where the singers are able to follow the guitar player.
 
 TODOs: 
-- [x] Song
-- [x] Songslist
-- [x] transformTitle 
-  - [x] english edge cases
-- [x] Navbar
-- [x] Footer
-- [ ] Styling
-  - [x] icon
-  - [x] Chords
-  - [x] fix Chords nav bug
-  - [ ] change letter style
-  - [ ] Letter list sidebar???
-  - [ ] dark mode toggle
-  - [ ] language toggle
-  - [x] responsive
-  - [ ] Autoanimate??? --> for adding/removing songs to reportaire
-- [x] TranslateLatex 
-  - [x] customToLatex
-  - [x] intro/outro
-  - [x] meadly
-  - [x] remove translateLatex and transform the files to html
-  - [ ] **clean up songs**
-- [x] database for user profiles
-- [ ] nextAuth-Login
-  - [x] general stuff 
-  - [ ] smtp account
+- [ ] Pages
+  - [x] Song
+    - [ ] addSongToRep-button/removeSongFromRep-button (with dropdown)
+  - [x] Songslist
+    - [ ] addSongToRep-button/removeSongFromRep-button (with dropdown)
+  - [x] transformTitle 
+    - [x] english edge cases
+  - [x] Sidebarbar
+    - [ ] responsive sidebar
+    - [ ] search bar
+      - [ ] by title
+      - [ ] by text simalarity
+  - [ ] Profile page
+  - [ ] follow page
+
   - [ ] **login player**
     - [ ] **profile**
     - [ ] **repertoire dispaly**
@@ -39,9 +28,28 @@ TODOs:
     - [ ] suggestions to guitarplayer?
 - [ ] **follow me page**
   - [ ] **follow me update**
-- [ ] search bar
-  - [ ] by title
-  - [ ] by text simalarity
+- [ ] Styling
+  - [x] icon
+  - [x] Chords
+  - [x] fix Chords nav bug
+  - [ ] change letter style
+  - [ ] Letter list sidebar???
+  - [ ] dark mode toggle
+  - [ ] english lang support
+  - [x] responsive
+  - [ ] Autoanimate??? --> for adding/removing songs to reportaire
+  - [x] TranslateLatex 
+    - [x] customToLatex
+    - [x] intro/outro
+    - [x] meadly
+    - [x] remove translateLatex and transform the files to html
+    - [ ] **clean up songs**
+- [x] database for user profiles
+- [x] nextAuth-Login
+  - [x] general stuff 
+  - [ ] mail login
+    - [ ] smtp account
 - [x] actually deploying it
+  - [ ] **deploying database**
 - [ ] far future: stress test user
 - [ ] **logging**  

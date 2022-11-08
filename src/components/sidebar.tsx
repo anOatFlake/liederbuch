@@ -32,26 +32,26 @@ const SideBar = () => {
   ];
   return (
     <>
-      <nav className="fixed top-0 h-full w-52 bg-slate-800/10 p-4 shadow-md">
-        <div className="px-2">
-          <Link href={"/profile"} className="px-2">
+      <nav className="fixed top-0 h-full p-4 shadow-md w-52 bg-slate-800/10">
+        <div className="px-4">
+          <Link href={"/profile"}>
             Profil
           </Link>
         </div>
-        <div className="mt-4 px-2">
+        <div className="px-4 mt-4">
           <Link href={"/currentSong"}>
             Folgen
           </Link>
         </div>
 
-        <div className="mt-8 px-2">
-          <Link href={"/songs"} className="px-2">
+        <div className="px-4 mt-8">
+          <Link href={"/songs"}>
             Liste
           </Link>
         </div>
         <div className="grid grid-cols-6 px-2">
           {letters.map((letter: string) => (
-            <div key={letter} className="p-1 text-center">
+            <button key={letter} className="p-1 text-center">
               <Link
                 href={{
                   pathname: "/songs",
@@ -60,7 +60,7 @@ const SideBar = () => {
               >
                 {letter}
               </Link>
-            </div>
+            </button>
           ))}
         </div>
       </nav>

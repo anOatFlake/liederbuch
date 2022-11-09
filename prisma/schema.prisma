@@ -22,6 +22,13 @@ model SongRef {
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+model Repertoire {
+    id String @id @default(cuid())
+    reportoireName String
+    userId String
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
@@ -56,6 +63,8 @@ model User {
     emailVerified DateTime?
     image         String?
     songs         SongRef[]
+    repertoires   Repertoire[]
+    inviteCode    String?   @unique
     accounts      Account[]
     sessions      Session[]
 }

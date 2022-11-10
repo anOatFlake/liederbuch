@@ -10,12 +10,13 @@ TODOs:
     - [x] english edge cases
   - [x] Sidebarbar
     - [ ] responsive sidebar
+    - [ ] icons for text labels
     - [ ] search bar
       - [ ] by title
       - [ ] by text simalarity
   - [ ] Profile page
   - [ ] follow page
-
+  - [ ] reportoire list (orderable?? a-z or custom)
   - [ ] **login player**
     - [ ] **profile**
     - [ ] **repertoire dispaly**
@@ -35,7 +36,7 @@ TODOs:
   - [ ] change letter style
   - [ ] Letter list sidebar???
   - [ ] dark mode toggle
-  - [ ] english lang support
+  - [ ] english lang support --> **meta data**
   - [x] responsive
   - [ ] Autoanimate??? --> for adding/removing songs to reportaire
   - [x] TranslateLatex 

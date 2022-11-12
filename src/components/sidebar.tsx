@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { string } from "zod";
 
+/**
+ * The navigation sidebar
+ */
 const SideBar: React.FC = () => {
   const letters = [
     "A",
@@ -33,22 +36,22 @@ const SideBar: React.FC = () => {
   ];
   return (
     <>
-      <div className="fixed top-0 w-full border-b-2 border-teal-700 p-4 md:hidden">
+      <div className="fixed top-0 w-full p-4 border-b-2 border-teal-700 md:hidden">
         <button id="nav-toggle" type="button" aria-pressed="false">
           Insert menu icon
         </button>
       </div>
-      <nav className="fixed bottom-0 top-16 w-full md:hidden">
-        <div className="mt-6 w-full px-8">
+      <nav className="fixed bottom-0 w-full top-16 md:hidden">
+        <div className="w-full px-8 mt-6 tracking-widest">
           <Link href={"/currentSong"}>Folgen</Link>
         </div>
-        <div className="mt-6 w-full px-8">
+        <div className="w-full px-8 mt-6 tracking-widest">
           <Link href={"/profile"}>Profil</Link>
         </div>
-        <div className="mt-12 w-full px-8">
+        <div className="w-full px-8 mt-12 tracking-widest">
           <Link href={"/songs"}>Liste</Link>
         </div>
-        <div className="mt-1 grid w-screen grid-cols-6 px-8">
+        <div className="grid w-screen grid-cols-6 px-8 mt-1">
           {letters.map((letter: string) => (
             <button key={letter} className="p-2 text-center">
               <Link
@@ -64,17 +67,17 @@ const SideBar: React.FC = () => {
         </div>
       </nav>
 
-      <nav className="fixed top-0 hidden h-full w-64 border-r-2 border-teal-700 p-4 md:block">
-        <div className="mt-6 px-4">
+      <nav className="fixed top-0 hidden w-64 h-full p-4 border-r-2 border-teal-700 md:block">
+        <div className="px-4 mt-6 tracking-widest">
           <Link href={"/currentSong"}>Folgen</Link>
         </div>
-        <div className="mt-6 px-4">
+        <div className="px-4 mt-6 tracking-widest">
           <Link href={"/profile"}>Profil</Link>
         </div>
-        <div className="mt-12 px-4">
+        <div className="px-4 mt-12 tracking-widest">
           <Link href={"/songs"}>Liste</Link>
         </div>
-        <div className="mt-1 grid grid-cols-6 px-2">
+        <div className="grid grid-cols-6 px-2 mt-1">
           {letters.map((letter: string) => (
             <button key={letter} className="p-2 text-center">
               <Link
@@ -94,8 +97,3 @@ const SideBar: React.FC = () => {
 };
 
 export default SideBar;
-
-interface LinkProps {
-  path: string;
-  text: string;
-}

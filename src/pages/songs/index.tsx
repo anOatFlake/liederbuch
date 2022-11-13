@@ -30,8 +30,8 @@ const Songs: NextPage = ({ songs }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main className="pl-60">
-        <div className="mx-auto max-w-sm md:container">
+      <main className="md:pl-64">
+        <div className="mx-auto max-w-sm md:container md:pl-4">
           <ul>
             {songList.map((song: string, index: number) => (
               <li key={index} className="pb-1 pl-2">

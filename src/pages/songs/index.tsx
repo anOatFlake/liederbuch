@@ -34,7 +34,10 @@ const Songs: NextPage = ({ songs }: any) => {
         <div className="mx-auto max-w-sm md:container md:pl-4">
           <ul>
             {songList.map((song: string, index: number) => (
-              <li key={index} className="pb-1 pl-2">
+              <li
+                key={index}
+                className="pb-1 pl-2 underline-offset-4 hover:underline"
+              >
                 <Link href={`/songs/${encodeURIComponent(song)}`}>
                   {cleanUpTitle(song)}
                 </Link>

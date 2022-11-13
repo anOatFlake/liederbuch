@@ -16,17 +16,18 @@ datasource db {
 }
 
 model SongRef {
-    id String  @id @default(cuid())
-    songId String
-    userId String   
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    id      String  @id @default(cuid())
+    songId  String
+    userId  String   
+    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Repertoire {
-    id String @id @default(cuid())
-    reportoireName String
-    userId String
-    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    id              String  @id @default(cuid())
+    reportoireName  String
+    userId          String
+    inviteCode      String? @unique
+    user            User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 // Necessary for Next auth
@@ -64,7 +65,6 @@ model User {
     image         String?
     songs         SongRef[]
     repertoires   Repertoire[]
-    inviteCode    String?   @unique
     accounts      Account[]
     sessions      Session[]
 }

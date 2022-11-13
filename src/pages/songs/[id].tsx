@@ -23,7 +23,10 @@ const Song: NextPage = ({ songData }: any) => {
       </Head>
       <SideBar />
       <main className="md:pl-64">
-        <div className="md:pl-2" dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
+        <div
+          className="md:pl-2"
+          dangerouslySetInnerHTML={{ __html: songData.contentHtml }}
+        />
         <AddToRepButton />
       </main>
     </>

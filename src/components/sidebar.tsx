@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { string } from "zod";
 
 /**
  * The navigation sidebar

@@ -4,6 +4,8 @@ import type {
   NextPage,
   GetStaticPropsContext,
 } from "next";
+import { useSession } from "next-auth/react";
+import { trpc } from "../../utils/trpc";
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
@@ -22,6 +24,7 @@ const Song: NextPage = ({ songData }: any) => {
       <SideBar />
       <main className="pl-60">
         <div dangerouslySetInnerHTML={{ __html: songData.contentHtml }} />
+        <AddToRepButton />
       </main>
     </>
   );
@@ -46,4 +49,29 @@ export const getStaticProps: GetStaticProps = async ({
       songData,
     },
   };
+};
+
+const AddToRepButton: React.FC = () => {
+  const { data: sessionData } = useSession();
+
+  const { data: isInReporoire } = trpc.auth.isSongInRepertoire.useQuery(
+    undefined, // no input TODO: probably change input
+    { enabled: sessionData?.user !== undefined }
+  );
+
+  //if logged in
+  return sessionData ? (
+    isInReporoire ? (
+      //TODO: Button styling
+      <button className="" onClick={() => console.log("ADDED TO REP")}>
+        Add to Reportaire
+      </button>
+    ) : (
+      <button className="" onClick={() => console.log("REMOVED FROM REP")}>
+        Remove from Reportaire
+      </button>
+    )
+  ) : (
+    <></>
+  );
 };

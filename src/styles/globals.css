@@ -5,6 +5,9 @@
 body {
   @apply bg-slate-200 tracking-wide text-gray-700 dark:bg-gray-900 dark:text-slate-400;
 }
+main {
+  @apply md:pl-64
+}
 
 .headline {
   @apply p-2 pb-4 font-semibold tracking-widest text-gray-800 underline underline-offset-8 dark:text-slate-300;

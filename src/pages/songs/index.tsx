@@ -30,7 +30,7 @@ const Songs: NextPage = ({ songs }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main className="md:pl-64">
+      <main>
         <div className="mx-auto max-w-sm md:container md:pl-4">
           <ul>
             {songList.map((song: string, index: number) => (
@@ -41,7 +41,6 @@ const Songs: NextPage = ({ songs }: any) => {
                 <Link href={`/songs/${encodeURIComponent(song)}`}>
                   {cleanUpTitle(song)}
                 </Link>
-                <AddToRepButton />
               </li>
             ))}
           </ul>

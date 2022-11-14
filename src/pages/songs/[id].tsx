@@ -22,7 +22,7 @@ const Song: NextPage = ({ songData }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main className="md:pl-64">
+      <main>
         <div
           className="md:pl-2"
           dangerouslySetInnerHTML={{ __html: songData.contentHtml }}

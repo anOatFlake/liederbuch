@@ -58,7 +58,7 @@ const SideBar: React.FC = () => {
           </>
         ) : (
           <div className="mt-6 w-full  tracking-widest underline-offset-4 hover:underline">
-            <Link href={"/"} onClick={() => signIn()}>Login</Link>
+            <Link href={"/"} onClick={() => signIn("discord")}>Login</Link>
           </div>
         )}
         <div className="mt-12 w-full px-8 tracking-widest underline-offset-4 hover:underline">
@@ -98,7 +98,7 @@ const SideBar: React.FC = () => {
           </>
         ) : (
           <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-            <Link href={"/"} onClick={() => signIn()}>Login</Link>
+            <Link href={"/"} onClick={() => signIn("discord")}>Login</Link>
           </div>
         )}
         <div className="mt-12 px-4 tracking-widest underline-offset-4 hover:underline">

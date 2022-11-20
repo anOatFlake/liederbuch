@@ -53,7 +53,7 @@ const SideBar: React.FC = () => {
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full  tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"} onClick={() => signOut()}>Logout</Link>
+              <Link href={"/"} onClick={() => signOut({ callbackUrl: 'http://localhost:3000/' })}>Logout</Link>
             </div>
           </>
         ) : (
@@ -93,7 +93,7 @@ const SideBar: React.FC = () => {
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"} onClick={() => signOut()}>Logout</Link>
+              <Link href={"/"} onClick={() => signOut({ callbackUrl: 'http://localhost:3000/' })}>Logout</Link>
             </div>
           </>
         ) : (

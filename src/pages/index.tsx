@@ -16,9 +16,7 @@ const Home: NextPage = () => {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <AuthShowcase />
-      </main>
+      <main></main>
     </>
   );
 };
@@ -35,12 +33,14 @@ const AuthShowcase: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
-      {sessionData && (
-        <p className="text-2xl text-blue-500">
-          Logged in as {sessionData?.user?.name}
-        </p>
-      )}
-      {secretMessage && (
+      <>
+        {sessionData?.user ?? (
+          <p className="text-2xl text-blue-500">
+            Logged in as {sessionData?.user?.name}
+          </p>
+        )}
+      </>
+      {secretMessage ?? (
         <p className="text-2xl text-blue-500">{secretMessage}</p>
       )}
       <button

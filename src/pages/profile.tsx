@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import SideBar from "../components/sidebar";
 
 const Profile: NextPage = () => {
+  const { data: sessionData } = useSession();
+
   return (
     <>
       <Head>
@@ -12,7 +15,15 @@ const Profile: NextPage = () => {
       </Head>
       <SideBar />
       <main>
-        
+        <div>Placeholder for profile picture</div>
+        <div>
+          <span>Username: </span>
+          {sessionData?.user?.name}
+        </div>
+        <div>
+          <span>Email: </span>
+          {sessionData?.user?.name}
+        </div>
       </main>
     </>
   );

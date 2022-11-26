@@ -1,12 +1,14 @@
+import exp from "constants";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useState } from "react";
 
 /**
  * The navigation sidebar
  */
 const SideBar: React.FC = () => {
   const { data: sessionData } = useSession();
-  let expanded = false;
+  let [expanded, setExpanded] = useState(false);
 
   const letters = [
     "A",
@@ -40,33 +42,40 @@ const SideBar: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-0 w-full border-b-2 border-teal-500 p-4 dark:border-teal-700 md:hidden">
+      <div className="fixed top-0 w-full border-b-2 border-teal-500 bg-slate-200 p-4 dark:border-teal-700 dark:bg-gray-900 md:hidden">
         <button
           id="nav-toggle"
           type="button"
-          onClick={() => {
-            expanded = !expanded;
-          }}
+          onClick={() => setExpanded((expanded) => !expanded)}
         >
-          Insert menu icon
+          {expanded ? "Close" : "Open"}
         </button>
       </div>
-      {true ?? (
-        <nav className={"fixed bottom-0 top-16 w-full md:hidden"}>
+      {expanded ? (
+        <nav
+          className={
+            "fixed bottom-0 top-16 w-full bg-slate-200 dark:bg-gray-900 md:hidden"
+          }
+        >
           <div className="mt-6 w-full px-8 tracking-widest underline-offset-4 hover:underline">
-            <Link href={"/currentSong"}>Folgen</Link>
+            <Link href={"/currentSong"} onClick={() => setExpanded(false)}>
+              Folgen
+            </Link>
           </div>
           {sessionData ? (
             <>
               <div className="mt-6 w-full px-8 tracking-widest underline-offset-4 hover:underline">
-                <Link href={"/profile"}>Profil</Link>
+                <Link href={"/profile"} onClick={() => setExpanded(false)}>
+                  Profil
+                </Link>
               </div>
               <div className="mt-6 w-full px-8 tracking-widest underline-offset-4 hover:underline">
                 <Link
                   href={"/"}
-                  onClick={() =>
-                    signOut({ callbackUrl: "http://localhost:3000/" })
-                  }
+                  onClick={() => {
+                    setExpanded(false);
+                    signOut({ callbackUrl: "http://localhost:3000/" });
+                  }}
                 >
                   Logout
                 </Link>
@@ -74,13 +83,21 @@ const SideBar: React.FC = () => {
             </>
           ) : (
             <div className="mt-6 w-full px-8 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"} onClick={() => signIn("discord")}>
+              <Link
+                href={"/"}
+                onClick={() => {
+                  setExpanded(false);
+                  signIn("discord");
+                }}
+              >
                 Login
               </Link>
             </div>
           )}
           <div className="mt-12 w-full px-8 tracking-widest underline-offset-4 hover:underline">
-            <Link href={"/songs"}>Liste</Link>
+            <Link href={"/songs"} onClick={() => setExpanded(false)}>
+              Liste
+            </Link>
           </div>
           <div className="mt-1 grid w-screen grid-cols-6 px-8">
             {letters.map((letter: string) => (
@@ -93,6 +110,7 @@ const SideBar: React.FC = () => {
                     pathname: "/songs",
                     query: { letter: letter },
                   }}
+                  onClick={() => setExpanded(false)}
                 >
                   {letter}
                 </Link>
@@ -100,6 +118,8 @@ const SideBar: React.FC = () => {
             ))}
           </div>
         </nav>
+      ) : (
+        <></>
       )}
 
       <nav className="fixed top-0 hidden h-full w-64 border-r-2 border-teal-500 p-4 dark:border-teal-700 md:block">

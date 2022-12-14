@@ -1,4 +1,3 @@
-import exp from "constants";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,7 +7,7 @@ import { useState } from "react";
  */
 const SideBar: React.FC = () => {
   const { data: sessionData } = useSession();
-  let [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const letters = [
     "A",

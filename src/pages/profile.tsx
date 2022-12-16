@@ -14,7 +14,7 @@ const Profile: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main>
+      <main className="pl-2 md:pl-4 pt-16 md:pt-4">
         <div>Placeholder for profile picture</div>
         <div>
           <span>Username: </span>
@@ -22,7 +22,7 @@ const Profile: NextPage = () => {
         </div>
         <div>
           <span>Email: </span>
-          {sessionData?.user?.name}
+          {sessionData?.user?.email}
         </div>
       </main>
     </>
@@ -31,6 +31,9 @@ const Profile: NextPage = () => {
 
 export default Profile;
 
-// Image - Name
-// mail address
-// Reportaire
+//TODO: Image - Name
+//TODO: mail address
+//TODO: Reportaire
+
+//TODO: styling
+//TODO: image

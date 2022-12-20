@@ -15,18 +15,19 @@ datasource db {
     //url      = env("DATABASE_URL")
 }
 
-model SongRef {
+model Song {
     id      String  @id @default(cuid())
     songId  String
-    userId  String   
-    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+    repId   String
+    reportoire  Repertoire  @relation(fields: [repId], references: [id], onDelete: Cascade)
 }
 
 model Repertoire {
     id              String  @id @default(cuid())
-    reportoireName  String
+    reportoireName  String?
     userId          String
     inviteCode      String? @unique
+    songs           Song[]
     user            User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
@@ -63,7 +64,6 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
-    songs         SongRef[]
     repertoires   Repertoire[]
     accounts      Account[]
     sessions      Session[]

@@ -14,15 +14,17 @@ const Profile: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main className="pl-2 md:pl-4 pt-16 md:pt-4">
-        <div>Placeholder for profile picture</div>
-        <div>
-          <span>Username: </span>
-          {sessionData?.user?.name}
-        </div>
-        <div>
-          <span>Email: </span>
-          {sessionData?.user?.email}
+      <main>
+        <div className="pl-2 md:pl-4 pt-16 md:pt-4">
+          <div>Placeholder for profile picture</div>
+          <div>
+            <span>Username: </span>
+            {sessionData?.user?.name}
+          </div>
+          <div>
+            <span>Email: </span>
+            {sessionData?.user?.email}
+          </div>
         </div>
       </main>
     </>

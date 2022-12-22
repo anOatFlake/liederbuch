@@ -22,7 +22,7 @@ const Song: NextPage = ({ songData }: any) => {
       <SideBar />
       <main>
         <div
-          className="md:pl-2 pt-14 md:pt-4"
+          className="pt-14 md:pl-2 md:pt-4"
           dangerouslySetInnerHTML={{ __html: songData.contentHtml }}
         />
       </main>

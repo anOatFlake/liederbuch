@@ -6,7 +6,7 @@ body {
   @apply bg-slate-200 tracking-wide text-gray-700 dark:bg-gray-900 dark:text-slate-400;
 }
 main {
-  @apply md:pl-64
+  @apply md:pl-64;
 }
 
 .headline {

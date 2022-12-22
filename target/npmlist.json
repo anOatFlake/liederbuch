@@ -1,1 +1,20 @@
-{"version":"0.1.1","name":"liederbuch","dependencies":{"@next-auth/prisma-adapter":{"version":"1.0.4"},"@prisma/client":{"version":"4.4.0"},"@trpc/client":{"version":"9.27.2"},"@trpc/next":{"version":"9.27.2"},"@trpc/react":{"version":"9.27.2"},"@trpc/server":{"version":"9.27.2"},"next-auth":{"version":"4.10.3"},"next":{"version":"12.2.5"},"nodemailer":{"version":"6.7.8"},"react-dom":{"version":"18.2.0"},"react-query":{"version":"3.39.2"},"react":{"version":"18.2.0"},"superjson":{"version":"1.9.1"},"zod":{"version":"3.18.0"}}}
+{
+  "version": "0.1.1",
+  "name": "liederbuch",
+  "dependencies": {
+    "@next-auth/prisma-adapter": { "version": "1.0.4" },
+    "@prisma/client": { "version": "4.4.0" },
+    "@trpc/client": { "version": "9.27.2" },
+    "@trpc/next": { "version": "9.27.2" },
+    "@trpc/react": { "version": "9.27.2" },
+    "@trpc/server": { "version": "9.27.2" },
+    "next-auth": { "version": "4.10.3" },
+    "next": { "version": "12.2.5" },
+    "nodemailer": { "version": "6.7.8" },
+    "react-dom": { "version": "18.2.0" },
+    "react-query": { "version": "3.39.2" },
+    "react": { "version": "18.2.0" },
+    "superjson": { "version": "1.9.1" },
+    "zod": { "version": "3.18.0" }
+  }
+}

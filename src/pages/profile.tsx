@@ -15,7 +15,7 @@ const Profile: NextPage = () => {
       </Head>
       <SideBar />
       <main>
-        <div className="pl-2 md:pl-4 pt-16 md:pt-4">
+        <div className="pl-2 pt-16 md:pl-4 md:pt-4">
           <div>Placeholder for profile picture</div>
           <div>
             <span>Username: </span>

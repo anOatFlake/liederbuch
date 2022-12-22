@@ -29,7 +29,7 @@ const Songs: NextPage = ({ songs }: any) => {
       </Head>
       <SideBar />
       <main>
-        <div className="mx-auto max-w-sm md:container pl-2 md:pl-4 pt-16 md:pt-4">
+        <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-4 md:pt-4">
           <ul>
             {songList.map((song: string, index: number) => (
               <li

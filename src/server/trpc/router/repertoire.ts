@@ -15,8 +15,7 @@ export const repertoireRouter = router({
     })
   }),
   
-  
-  //TODO: has song in reportoire
+
   isSongInRepertoire: protectedProcedure.input(z.string()).query(({ input, ctx }) => {
     return ctx.prisma.repertoire.findFirst({
       where: {

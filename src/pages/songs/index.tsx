@@ -5,6 +5,7 @@ import { cleanUpTitle } from "../../utils/title-transformer";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
+import AddToRepButton from "../../components/buttons/addToRepButton";
 
 const Songs: NextPage = ({ songs }: any) => {
   const router = useRouter();
@@ -39,6 +40,7 @@ const Songs: NextPage = ({ songs }: any) => {
                 <Link href={`/songs/${encodeURIComponent(song)}`}>
                   {cleanUpTitle(song)}
                 </Link>
+                <AddToRepButton />
               </li>
             ))}
           </ul>

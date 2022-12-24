@@ -4,20 +4,17 @@ import { trpc } from "../../utils/trpc";
 const AddToRepButton: React.FC = () => {
   const { data: sessionData } = useSession();
 
-  const { data: isInReporoire } = trpc.auth.isSongInRepertoire.useQuery(
-    undefined, // no input TODO: probably change input
-    { enabled: sessionData?.user !== undefined }
-  );
+  const { data: isInReporoire } = trpc.repertoire.isSongInRepertoire.useQuery('bayernland')
 
   //if logged in
   return sessionData ? (
-    isInReporoire ? (
+    !isInReporoire ? (
       //TODO: Button styling
-      <button className="" onClick={() => console.log("ADDED TO REP")}>
+      <button className="bg-cyan-700 rounded-full inline-block w-6 h-6" onClick={() => console.log("ADDED TO REP")}>
         +
       </button>
     ) : (
-      <button className="" onClick={() => console.log("REMOVED FROM REP")}>
+      <button className="bg-teal-700 rounded-full inline-block w-6 h-6" onClick={() => console.log("REMOVED FROM REP")}>
         -
       </button>
     )

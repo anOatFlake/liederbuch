@@ -10,7 +10,7 @@ TODOs:
   - [x] transformTitle
     - [x] english edge cases
   - [x] Sidebarbar
-    - [ ] responsive sidebar
+    - [x] responsive sidebar
     - [ ] icons for text labels
     - [ ] search bar
       - [ ] by title
@@ -35,7 +35,7 @@ TODOs:
   - [x] Chords
   - [x] fix Chords nav bug
   - [ ] change letter style
-  - [ ] Letter list sidebar???
+  - [x] Letter list sidebar???
   - [ ] dark mode toggle
   - [ ] english lang support --> **meta data**
   - [x] responsive
@@ -52,6 +52,6 @@ TODOs:
   - [ ] mail login
     - [ ] smtp account
 - [x] actually deploying it
-  - [ ] **deploying database**
+  - [x] **deploying database**
 - [ ] far future: stress test user
 - [ ] **logging**

@@ -1,4 +1,3 @@
-import { contextProps } from "@trpc/react-query/dist/internals/context";
 import { router, publicProcedure, protectedProcedure } from "../trpc";
 import { z } from "zod";
 

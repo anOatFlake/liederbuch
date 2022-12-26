@@ -40,7 +40,7 @@ const Songs: NextPage = ({ songs }: any) => {
                 <Link href={`/songs/${encodeURIComponent(song)}`}>
                   {cleanUpTitle(song)}
                 </Link>
-                <AddToRepButton id={song}/>
+                <AddToRepButton id={song} />
               </li>
             ))}
           </ul>

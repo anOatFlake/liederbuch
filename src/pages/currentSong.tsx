@@ -1,9 +1,11 @@
 import Login from "../components/login";
 
 const CurrentSong = () => {
-  return <>
-    <Login />
-  </>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 };
 
 export default CurrentSong;

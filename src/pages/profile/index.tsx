@@ -19,9 +19,15 @@ const Profile: NextPage = () => {
       <SideBar />
       <main>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
-         {userData?.image ? (
-            <Image className="" src={userData?.image} alt="Profile Picture"></Image>
-          ) : <></>}
+          {userData?.image ? (
+            <Image
+              className=""
+              src={userData?.image}
+              alt="Profile Picture"
+            ></Image>
+          ) : (
+            <></>
+          )}
           <div>
             <span>Username: </span>
             {sessionData?.user?.name}
@@ -39,7 +45,6 @@ const Profile: NextPage = () => {
 export default Profile;
 
 //TODO: Image - Name
-//TODO: mail address
 //TODO: Reportaire
 
 //TODO: styling

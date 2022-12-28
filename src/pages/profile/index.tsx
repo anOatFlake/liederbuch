@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
-import SideBar from "../components/sidebar";
+import SideBar from "../../components/sidebar";
+import { trpc } from "../../utils/trpc";
+import Image from "next/image";
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession();
+  const { data: userData } = trpc.users.getUser.useQuery();
 
   return (
     <>
@@ -16,7 +19,9 @@ const Profile: NextPage = () => {
       <SideBar />
       <main>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
-          <div>Placeholder for profile picture</div>
+         {userData?.image ? (
+            <Image className="" src={userData?.image} alt="Profile Picture"></Image>
+          ) : <></>}
           <div>
             <span>Username: </span>
             {sessionData?.user?.name}

@@ -42,8 +42,9 @@ const Songs: NextPage = ({ songs }: any) => {
                     {cleanUpTitle(song)}
                   </Link>
                 </span>
-                
+                <span className="flex-none px-4 md:pr-10">
                   <AddToRepButton id={song} />
+                </span>
               </li>
             ))}
           </ul>

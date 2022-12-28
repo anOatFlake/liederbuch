@@ -19,7 +19,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
         className="inline-block h-6 w-6 rounded-full bg-cyan-700"
         onClick={() => {
           addSong.mutate(id);
-          setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
+          //setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
         }}
       >
         +
@@ -29,7 +29,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
         className="inline-block h-6 w-6 rounded-full bg-teal-700"
         onClick={() => {
           removeSong.mutate(id);
-          setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
+          //setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
         }}
       >
         -

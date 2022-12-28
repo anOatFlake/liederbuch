@@ -1,11 +1,12 @@
 import { useSession } from "next-auth/react";
-import { useState } from "react";
 import { trpc } from "../../utils/trpc";
+import { isSongInRepertoire } from "../../utils/repertoire";
 
 const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const { data: sessionData } = useSession();
 
-  const { data: isInReporoire } = trpc.repertoire.isSongInRepertoire.useQuery(id);
+  const { data: songData } = trpc.users.getSongs.useQuery();
+  let isInReporoire = isSongInRepertoire(id, songData);
 
   const addSong = trpc.repertoire.addSongToRepertoire.useMutation();
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
@@ -17,7 +18,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
         className="inline-block h-6 w-6 rounded-full bg-cyan-700"
         onClick={() => {
           addSong.mutate(id);
-          //setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
+          isInReporoire = true;
         }}
       >
         +
@@ -27,7 +28,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
         className="inline-block h-6 w-6 rounded-full bg-teal-700"
         onClick={() => {
           removeSong.mutate(id);
-          //setIsInRepertoire(trpc.repertoire.isSongInRepertoire.useQuery(id));
+          isInReporoire = false;
         }}
       >
         -

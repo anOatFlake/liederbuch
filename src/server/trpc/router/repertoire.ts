@@ -10,20 +10,6 @@ export const repertoireRouter = router({
     });
   }),
 
-  isSongInRepertoire: protectedProcedure
-    .input(z.string())
-    .query(({ input, ctx }) => {
-      return (
-        ctx.prisma.repertoire.findFirst({
-          where: {
-            songs: {
-              contains: input,
-            },
-          },
-        }) ?? false
-      );
-    }),
-
   addSongToRepertoire: protectedProcedure
     .input(z.string())
     .mutation(async ({ input, ctx }) => {
@@ -32,12 +18,17 @@ export const repertoireRouter = router({
           userId: ctx.session.user.id,
         },
       });
-      const result = await ctx.prisma.repertoire.update({
+
+      const result = await ctx.prisma.repertoire.upsert({
         where: {
           userId: ctx.session.user.id,
         },
-        data: {
+        update: {
           songs: input + ", " + currentRep?.songs,
+        },
+        create: {
+          userId: ctx.session.user.id,
+          songs: input,
         },
       });
       return { added: result };

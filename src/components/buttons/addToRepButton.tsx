@@ -5,9 +5,7 @@ import { trpc } from "../../utils/trpc";
 const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const { data: sessionData } = useSession();
 
-  const [isInReporoire, setIsInRepertoire] = useState(
-    trpc.repertoire.isSongInRepertoire.useQuery(id)
-  );
+  const { data: isInReporoire } = trpc.repertoire.isSongInRepertoire.useQuery(id);
 
   const addSong = trpc.repertoire.addSongToRepertoire.useMutation();
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();

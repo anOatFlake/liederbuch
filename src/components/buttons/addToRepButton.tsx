@@ -14,7 +14,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
 
   return sessionData ? (
     !isInReporoire ? (
-      //TODO: Button styling
+      //TODO: Button styling --> Icons https://github.com/Templarian/MaterialDesign or https://github.com/feathericons/feather
       <button
         className="inline-block h-6 w-6 rounded-full bg-cyan-700"
         onClick={() => {

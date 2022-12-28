@@ -30,17 +30,21 @@ const Songs: NextPage = ({ songs }: any) => {
       </Head>
       <SideBar />
       <main>
-        <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-4 md:pt-4">
+        <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
           <ul>
             {songList.map((song: string, index: number) => (
               <li
                 key={index}
-                className="pb-1 pl-2 underline-offset-4 hover:underline"
+                className="flex flex-row items-start pb-1 pl-2 underline-offset-4 hover:underline"
               >
-                <Link href={`/songs/${encodeURIComponent(song)}`}>
-                  {cleanUpTitle(song)}
-                </Link>
-                <AddToRepButton id={song} />
+                <span className="max-w-md grow">
+                  <Link href={`/songs/${encodeURIComponent(song)}`}>
+                    {cleanUpTitle(song)}
+                  </Link>
+                </span>
+                <span className="flex-none px-4 md:pr-10">
+                  <AddToRepButton id={song} />
+                </span>
               </li>
             ))}
           </ul>

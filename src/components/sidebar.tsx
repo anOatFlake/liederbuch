@@ -58,7 +58,7 @@ const SideBar: React.FC = () => {
         >
           <div className="mt-6 w-full px-8 tracking-widest underline-offset-4 hover:underline">
             <Link href={"/currentSong"} onClick={() => setExpanded(false)}>
-              Folgen
+              Folgen (WIP)
             </Link>
           </div>
           {sessionData ? (
@@ -131,6 +131,9 @@ const SideBar: React.FC = () => {
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
+              <Link href={"/"}>Create Songbook (WIP)</Link>
+            </div>
+            <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
               <Link
                 href={"/"}
                 onClick={() =>
@@ -167,6 +170,23 @@ const SideBar: React.FC = () => {
               </Link>
             </button>
           ))}
+        </div>
+        {
+          //Support Buttons
+        }
+        <div className="mt-12 px-4 tracking-widest underline-offset-4">
+          <button
+            className="container justify-center rounded-full border-2 bg-teal-400 p-1 font-medium hover:border-teal-600 dark:bg-teal-900"
+            onClick={() => {}}
+          >
+            Suggest Song (WIP)
+          </button>
+          <button
+            className="container mt-3 justify-center rounded-full border-2 bg-red-300 p-1 font-medium hover:border-red-500 dark:bg-red-900"
+            onClick={() => {}}
+          >
+            Report Bug (WIP)
+          </button>
         </div>
       </nav>
     </>

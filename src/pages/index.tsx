@@ -4,7 +4,6 @@ import { trpc } from "../utils/trpc";
 import Head from "next/head";
 
 const Home: NextPage = () => {
-  //const { data: hello } = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { trpc } from "../../utils/trpc";
 import { isSongInRepertoire } from "../../utils/repertoire";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const { data: sessionData } = useSession();
@@ -10,6 +10,9 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const [isInReperoire, setIsInRepertoire] = useState(
     isSongInRepertoire(id, songData)
   );
+  useEffect(() => {
+
+  }, [isInReperoire])
 
   const addSong = trpc.repertoire.addSongToRepertoire.useMutation();
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
@@ -28,7 +31,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
       </button>
     ) : (
       <button
-        className="inline-block h-6 w-6 rounded-full border-2 bg-red-300 hover:border-red-500 dark:bg-red-900"
+        className="inline-block h-6 w-6 rounded-full border-2 bg-red-300 hover:border-red-500 dark:bg-red-900 dark:border-slate-900"
         onClick={() => {
           removeSong.mutate(id);
           setIsInRepertoire(false);

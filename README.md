@@ -4,9 +4,9 @@ TODOs:
 
 - [ ] Pages
   - [x] Song
-    - [ ] addSongToRep-button/removeSongFromRep-button (with dropdown)
+    - [ ] **addSongToRep-button/removeSongFromRep-button** (with dropdown)
   - [x] Songslist
-    - [ ] addSongToRep-button/removeSongFromRep-button (with dropdown)
+    - [x] addSongToRep-button/removeSongFromRep-button (with dropdown)
   - [x] transformTitle
     - [x] english edge cases
   - [x] Sidebarbar
@@ -16,13 +16,13 @@ TODOs:
       - [ ] by title
       - [ ] by text simalarity
   - [ ] Profile page
-  - [ ] follow page
-  - [ ] reportoire list (orderable?? a-z or custom)
+  - [ ] **follow page**
   - [ ] **login player**
     - [ ] **profile**
     - [ ] **repertoire dispaly**
     - [ ] **buttons for adding and removing songs to repertoire**
-    - [ ] set password for singers ???
+    - [ ] **set password for singers ???**
+    - [ ] **change user settings**
     - [ ] generate qr code
     - [ ] import from ultimateguitar?
   - [ ] **"login" singer**

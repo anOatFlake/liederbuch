@@ -7,6 +7,7 @@ import type {
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
+import SongMenu from "../../components/songMenu";
 
 const Song: NextPage = ({ songData }: any) => {
   return (
@@ -21,6 +22,7 @@ const Song: NextPage = ({ songData }: any) => {
       </Head>
       <SideBar />
       <main>
+        <SongMenu id={songData.id} />
         <div
           className="pt-14 md:pl-2 md:pt-4"
           dangerouslySetInnerHTML={{ __html: songData.contentHtml }}

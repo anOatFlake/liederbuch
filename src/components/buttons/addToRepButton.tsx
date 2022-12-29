@@ -10,9 +10,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const [isInReperoire, setIsInRepertoire] = useState(
     isSongInRepertoire(id, songData)
   );
-  useEffect(() => {
-
-  }, [isInReperoire])
+  useEffect(() => {}, [isInReperoire])
 
   const addSong = trpc.repertoire.addSongToRepertoire.useMutation();
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();

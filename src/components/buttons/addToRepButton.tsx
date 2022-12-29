@@ -18,7 +18,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
     !isInReperoire ? (
       //TODO: Button styling --> Icons https://github.com/Templarian/MaterialDesign or https://github.com/feathericons/feather
       <button
-        className="inline-block h-6 w-6 rounded-full bg-cyan-700"
+        className="inline-block h-6 w-6 rounded-full border-2 bg-teal-400 hover:border-teal-600 dark:border-slate-900 dark:bg-teal-900"
         onClick={() => {
           addSong.mutate(id);
           setIsInRepertoire(true);
@@ -28,7 +28,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
       </button>
     ) : (
       <button
-        className="inline-block h-6 w-6 rounded-full bg-teal-700"
+        className="inline-block h-6 w-6 rounded-full border-2 bg-red-300 hover:border-red-500 dark:bg-red-900"
         onClick={() => {
           removeSong.mutate(id);
           setIsInRepertoire(false);

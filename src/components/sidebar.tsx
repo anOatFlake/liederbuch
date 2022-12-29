@@ -152,6 +152,9 @@ const SideBar: React.FC = () => {
           </div>
         )}
         <div className="mt-12 px-4 tracking-widest underline-offset-4 hover:underline">
+          Search (WIP)
+        </div>
+        <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
           <Link href={"/songs"}>Liste</Link>
         </div>
         <div className="mt-1 grid grid-cols-6 px-2">
@@ -176,15 +179,15 @@ const SideBar: React.FC = () => {
         }
         <div className="mt-12 px-4 tracking-widest underline-offset-4">
           <button
-            className="container justify-center rounded-full border-2 bg-teal-400 p-1 font-medium hover:border-teal-600 dark:bg-teal-900"
+            className="container justify-center rounded-full border-2 bg-teal-500/30 p-1 font-medium hover:border-teal-600/50 dark:border-slate-900 dark:bg-teal-800/30 dark:hover:border-teal-700/40"
             onClick={() => {}}
           >
             Suggest Song (WIP)
           </button>
           <button
-            className="container mt-3 justify-center rounded-full border-2 bg-red-300 p-1 font-medium hover:border-red-500 dark:bg-red-900"
-            onClick={() => {}}
-          >
+          className="container mt-3 justify-center rounded-full border-2 bg-red-300/70 p-1 font-medium hover:border-red-400/50 dark:border-slate-900 dark:bg-red-700/20 dark:hover:border-red-900/30"
+          onClick={() => {}}
+        >
             Report Bug (WIP)
           </button>
         </div>

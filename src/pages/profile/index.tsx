@@ -21,9 +21,11 @@ const Profile: NextPage = () => {
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
           {userData?.image ? (
             <Image
-              className=""
-              src={userData?.image}
+              className="rounded-full h-20 w-20"
+              src={userData.image}
               alt="Profile Picture"
+              width={200}
+              height={200}
             ></Image>
           ) : (
             <></>

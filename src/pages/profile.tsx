@@ -1,13 +1,22 @@
 import type { NextPage } from "next";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
-import SideBar from "../../components/sidebar";
-import { trpc } from "../../utils/trpc";
+import SideBar from "../components/sidebar";
+import { trpc } from "../utils/trpc";
 import Image from "next/image";
+import { repertoireAsArray } from "../utils/repertoire";
+import { useEffect, useState } from "react";
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession();
   const { data: userData } = trpc.users.getUser.useQuery();
+  const { data: repData } = trpc.users.getRepertoire.useQuery();
+
+  const [ songs, setSongs ] = useState(repertoireAsArray(repData?.songs))
+  
+  const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
+
+  useEffect(() => {}, [songs])
 
   return (
     <>
@@ -39,15 +48,23 @@ const Profile: NextPage = () => {
             {sessionData?.user?.email}
           </div>
         </div>
+        <div className="pl-2 pt-16 md:pl-4 md:pt-4">
+          <div>
+              <span> 
+              {sessionData?.user?.name?.trimEnd()}s Repertoire</span>
+          </div>
+          <div>
+              <span>inviteCode: </span>
+              {repData?.inviteCode}
+          </div>
+          <div>
+            List with rep songs -- Filter???
+          </div>
+        </div>
+          
       </main>
     </>
   );
 };
 
 export default Profile;
-
-//TODO: Image - Name
-//TODO: Reportaire
-
-//TODO: styling
-//TODO: image

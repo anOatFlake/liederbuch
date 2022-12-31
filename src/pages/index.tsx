@@ -4,7 +4,6 @@ import { trpc } from "../utils/trpc";
 import Head from "next/head";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>

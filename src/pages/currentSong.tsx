@@ -1,18 +1,16 @@
 import Head from "next/head";
 import SideBar from "../components/sidebar";
+import { getSongData } from "../utils/song";
 
 const CurrentSong = () => {
   const loggedIn = true; // TODO: Login request
 
-  return (
-    !loggedIn ? (
-      <>
-      </>
-    ) :
-      (
-      <>
+  return !loggedIn ? (
+    <></>
+  ) : (
+    <>
       <Head>
-        <title>{}</title>
+        <title>{songData.id}</title>
         <meta
           name="description"
           content="Songtext for the song {songData.id}"
@@ -21,10 +19,12 @@ const CurrentSong = () => {
       </Head>
       <SideBar />
       <main>
-       
+        <div
+          className="pt-14 md:pl-2 md:pt-4"
+          dangerouslySetInnerHTML={{ __html: songData.contentHtml }}
+        />
       </main>
-      </>
-      )
+    </>
   );
 };
 

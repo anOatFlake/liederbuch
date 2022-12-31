@@ -179,16 +179,16 @@ const SideBar: React.FC = () => {
         }
         <div className="mt-12 px-4 tracking-widest underline-offset-4">
           <button
-            className="container justify-center rounded-full border-2 bg-teal-500/30 p-1 font-medium hover:border-teal-600/50 dark:border-slate-900 dark:bg-teal-800/30 dark:hover:border-teal-700/40"
+            className="container justify-center rounded-full border-2 border-teal-500/30 p-2 font-bold text-xs tracking-widest hover:border-teal-600/50  dark:border-teal-800/30 dark:hover:border-teal-700/40"
             onClick={() => {}}
           >
-            Suggest Song (WIP)
+            SUGGEST SONG (WIP)
           </button>
           <button
-          className="container mt-3 justify-center rounded-full border-2 bg-red-300/70 p-1 font-medium hover:border-red-400/50 dark:border-slate-900 dark:bg-red-700/20 dark:hover:border-red-900/30"
-          onClick={() => {}}
-        >
-            Report Bug (WIP)
+            className="container mt-2 justify-center rounded-full border-2 border-red-300/70 p-2 font-bold text-xs tracking-widest hover:border-red-400/50  dark:border-red-700/20 dark:hover:border-red-900/30"
+            onClick={() => {}}
+          >
+            REPORT BUG (WIP)
           </button>
         </div>
       </nav>

@@ -2,7 +2,7 @@ import Head from "next/head";
 import SideBar from "../components/sidebar";
 import { getSongData } from "../utils/song";
 
-const CurrentSong = () => {
+const CurrentSong = (songData: any) => {
   const loggedIn = true; // TODO: Login request
 
   return !loggedIn ? (

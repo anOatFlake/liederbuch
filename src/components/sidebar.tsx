@@ -131,7 +131,10 @@ const SideBar: React.FC = () => {
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"}>Create Songbook (WIP)</Link>
+              <Link href={"/"}>Liederbücher (WIP)</Link>
+            </div>
+            <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
+              <Link href={"/"}>Unterpunkt create Songbook (WIP)</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
               <Link
@@ -180,13 +183,13 @@ const SideBar: React.FC = () => {
         <div className="mt-12 px-4 tracking-widest underline-offset-4">
           <button
             className="container justify-center rounded-full border-2 border-teal-500/30 p-2 font-bold text-xs tracking-widest hover:border-teal-600/50  dark:border-teal-800/30 dark:hover:border-teal-700/40"
-            onClick={() => {}}
+            onClick={() => {console.log()}}
           >
             SUGGEST SONG (WIP)
           </button>
           <button
             className="container mt-2 justify-center rounded-full border-2 border-red-300/70 p-2 font-bold text-xs tracking-widest hover:border-red-400/50  dark:border-red-700/20 dark:hover:border-red-900/30"
-            onClick={() => {}}
+            onClick={() => {console.log()}}
           >
             REPORT BUG (WIP)
           </button>

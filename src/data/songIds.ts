@@ -510,7 +510,7 @@ export const ALL_SONGS = [
   "Wie_ein_Fest_nach_langer_Trauer",
   "Wild_world",
   "Willkommen_in_Deutschland",
-  "illst_du",
+  "Willst_du",
   "Wind_of_change",
   "Wingman",
   "Wir_haben_Grund_zum_Feiern",

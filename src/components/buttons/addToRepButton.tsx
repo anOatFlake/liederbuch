@@ -25,7 +25,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
           setIsInRepertoire(true);
         }}
       >
-        +
+        ADD
       </button>
     ) : (
       <button
@@ -35,7 +35,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
           setIsInRepertoire(false);
         }}
       >
-        -
+        REMOVE
       </button>
     )
   ) : (

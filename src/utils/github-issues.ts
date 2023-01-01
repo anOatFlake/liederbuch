@@ -67,15 +67,13 @@ function createBasicDescription(
   let descriptionString = "";
   switch (issueType) {
     case ISSUE_TYPE.BUG:
-      description += "### Bugreport: \n" + description;
+      descriptionString += "### Bugreport: \n" + description;
       break;
     case ISSUE_TYPE.FEATURE:
-      description += "### Feature description: \n" + description;
+      descriptionString += "### Feature description: \n" + description;
       break;
     case ISSUE_TYPE.NEW_SONG:
-      description += "### Link to chords: \n[" + description + "](url)";
-      break;
-    default:
+      descriptionString += "### Link to chords: \n[" + description + "](url)";
       break;
   }
   return descriptionString;

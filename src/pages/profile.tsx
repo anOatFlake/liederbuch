@@ -18,7 +18,7 @@ const Profile: NextPage = () => {
 
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
 
-  useEffect(() => {}, [songs]);
+  useEffect(() => { }, [songs]);
 
   return (
     <>
@@ -30,10 +30,10 @@ const Profile: NextPage = () => {
       <SideBar />
       <main>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
-          {true ? (
+          {userData?.image ? (
             <img
               className="h-20 w-20 rounded-full"
-              src="https://cdn.discordapp.com/avatars/239735565174571008/adc192a5de8ed933a3c9fdb22b9fb46d.png"
+              src={userData.image}
               alt="Profile Picture"
             ></img>
           ) : (

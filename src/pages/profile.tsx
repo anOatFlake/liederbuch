@@ -20,6 +20,8 @@ const Profile: NextPage = () => {
 
   useEffect(() => { }, [songs]);
 
+  console.log(songs)
+
   return (
     <>
       <Head>
@@ -59,6 +61,7 @@ const Profile: NextPage = () => {
           <div>
             List with rep songs -- Filter???
             <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
+              {repData?.songs}
               <ul>
                 {songs?.map((song: string, index: number) => (
                   <li

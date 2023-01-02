@@ -131,7 +131,7 @@ const SideBar: React.FC = () => {
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"}>Liederbücher (WIP)</Link>
+              <Link href={"/songbooks"}>Liederbücher (WIP)</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
               <Link href={"/"}>Unterpunkt create Songbook (WIP)</Link>

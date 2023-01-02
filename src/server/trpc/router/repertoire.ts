@@ -28,7 +28,7 @@ export const repertoireRouter = router({
         },
         create: {
           userId: ctx.session.user.id,
-          songs: input,
+          songs: input + ", ",
         },
       });
       return { added: result };
@@ -47,7 +47,7 @@ export const repertoireRouter = router({
           userId: ctx.session.user.id,
         },
         data: {
-          songs: updatedSongs,
+          songs: 'TEST TEST',
         },
       });
     }),

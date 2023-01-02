@@ -31,7 +31,7 @@ export const repertoireRouter = router({
           songs: input + ", ",
         },
       });
-      return { added: input };
+      return { added: result };
     }),
   removeSongFromRepertoire: protectedProcedure
     .input(z.string())
@@ -50,6 +50,6 @@ export const repertoireRouter = router({
           songs: updatedSongs,
         },
       });
-      return { removed: input };
+      return { removed: result };
     }),
 });

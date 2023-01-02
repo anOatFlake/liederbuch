@@ -31,7 +31,7 @@ export const repertoireRouter = router({
           songs: input + ", ",
         },
       });
-      return { added: result };
+      return { added: input };
     }),
   removeSongFromRepertoire: protectedProcedure
     .input(z.string())
@@ -42,13 +42,14 @@ export const repertoireRouter = router({
         },
       });
       const updatedSongs = currentRep?.songs?.replace(input + ", ", "");
-      ctx.prisma.repertoire.update({
+      const result = await ctx.prisma.repertoire.update({
         where: {
           userId: ctx.session.user.id,
         },
         data: {
-          songs: 'TEST TEST',
+          songs: updatedSongs,
         },
       });
+      return { removed: input };
     }),
 });

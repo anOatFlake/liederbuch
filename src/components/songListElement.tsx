@@ -1,9 +1,18 @@
+import Link from "next/link";
 import AddToRepButton from "./buttons/addToRepButton";
+import { cleanUpTitle } from "../utils/title-transformer";
 
 const SongListElement: React.FC<{ id: string }> = ({ id }) => {
   return (
     <div>
-      <AddToRepButton id={id} />
+      <span className="max-w-md grow">
+        <Link href={`/songs/${encodeURIComponent(id)}`}>
+          {cleanUpTitle(id)}
+        </Link>
+      </span>
+      <span className="flex-none px-4 md:pr-10">
+        <AddToRepButton id={id} />
+      </span>
     </div>
   );
 };

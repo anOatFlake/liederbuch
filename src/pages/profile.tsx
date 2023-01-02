@@ -5,9 +5,7 @@ import SideBar from "../components/sidebar";
 import { trpc } from "../utils/trpc";
 import { repertoireAsArray } from "../utils/repertoire";
 import { useEffect, useState } from "react";
-import AddToRepButton from "../components/buttons/addToRepButton";
-import Link from "next/link";
-import { cleanUpTitle } from "../utils/title-transformer";
+import SongListElement from "../components/songListElement";
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession();
@@ -68,14 +66,7 @@ const Profile: NextPage = () => {
                     key={index}
                     className="flex flex-row items-start pb-1 pl-2 underline-offset-4 hover:underline"
                   >
-                    <span className="max-w-md grow">
-                      <Link href={`/songs/${encodeURIComponent(song)}`}>
-                        {cleanUpTitle(song)}
-                      </Link>
-                    </span>
-                    <span className="flex-none px-4 md:pr-10">
-                      <AddToRepButton id={song} />
-                    </span>
+                    <SongListElement id={song} />
                   </li>
                 ))}
               </ul>

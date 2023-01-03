@@ -1,6 +1,7 @@
 import Head from "next/head";
 import SideBar from "../components/sidebar";
-import { getSongData } from "../utils/song";
+
+// Statemanagement via Zustand https://github.com/pmndrs/zustand
 
 const CurrentSong = (songData: any) => {
   const loggedIn = true; // TODO: Login request

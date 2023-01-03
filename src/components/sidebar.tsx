@@ -94,7 +94,7 @@ const SideBar: React.FC = () => {
 
       <nav className="fixed top-0 hidden h-full w-64 border-r-2 border-gray-400 p-4 dark:border-gray-700 md:block">
         <div className="mt-6 px-4 tracking-widest underline-offset-4 hover:underline">
-          <Link href={"/currentSong"}>Folgen</Link>
+          <Link href={"/currentSong"}>Folgen (WIP)</Link>
         </div>
         {sessionData ? (
           <>

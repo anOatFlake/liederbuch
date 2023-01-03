@@ -50,7 +50,7 @@ const Profile: NextPage = () => {
         </div>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
           <div>
-            <span>{sessionData?.user?.name?.trimEnd()}s Repertoire</span>
+            <span>Repertoire</span>
           </div>
           <div>
             <span className="">inviteCode: </span>
@@ -59,7 +59,6 @@ const Profile: NextPage = () => {
           <div>
             List with rep songs -- Filter???
             <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
-              {repData?.songs}
               <ul>
                 {repertoireAsArray(repData?.songs)?.map((song: string, index: number) => (
                   <li

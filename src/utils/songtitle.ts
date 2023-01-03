@@ -1,3 +1,5 @@
+import { ALL_SONGS } from "../data/songIds";
+
 /**
  * turns the ANSI strings into the German titles
  * @param id string
@@ -40,4 +42,19 @@ function replaceSharpS(id: string): string {
     .replaceAll("gross", "groß")
     .replaceAll("Strassen", "Straßen")
     .replaceAll("Scheisse", "Scheiße");
+}
+
+/**
+ * returns all songs that start with a certain letter or with any number
+ * @param letter 
+ * @returns 
+ */
+export function getSongsByLetter(letter: string): string[] {
+  return letter !== "0-9"
+    ? ALL_SONGS.filter((songName: string) => {
+        return songName.startsWith(letter.toString());
+      })
+    : ALL_SONGS.filter((songName: string) => {
+        return /^\d/.test(songName) || /^\W/.test(songName);
+      });
 }

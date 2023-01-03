@@ -1,16 +1,8 @@
-import { ALL_SONGS } from "../data/songIds";
+import { getSongsByLetter } from "../utils/songtitle";
 import SongListElement from "./songListElement";
 
 const LetterGroup: React.FC<{ letter: string }> = ({ letter }) => {
-  const songs =   //TODO: in utils auslagern --> basic filter via letter
-    letter !== "0-9"
-      ? ALL_SONGS.filter((songName: string) => {
-          return songName.startsWith(letter.toString());
-        })
-      : ALL_SONGS.filter((songName: string) => {
-          return /^\d/.test(songName) || /^\W/.test(songName);
-        });
-
+  const songs = getSongsByLetter(letter)
   return (
     <>
       <div>

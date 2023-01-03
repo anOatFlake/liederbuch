@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AddToRepButton from "./buttons/addToRepButton";
-import { cleanUpTitle } from "../utils/title-transformer";
+import { cleanUpTitle } from "../utils/songtitle";
 
 const SongListElement: React.FC<{ id: string }> = ({ id }) => {
   return (

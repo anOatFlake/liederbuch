@@ -9,6 +9,13 @@ export const repertoireRouter = router({
       },
     });
   }),
+  getRepertoireViaInviteCode: publicProcedure.input(z.string()).query(({ ctx, input }) => {
+    return ctx.prisma.repertoire.findUnique({
+      where: {
+        inviteCode: input
+      },
+    });
+  }),
 
   addSongToRepertoire: protectedProcedure
     .input(z.string())

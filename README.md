@@ -18,17 +18,15 @@ TODOs:
       - [ ] by text simalarity
     - [ ] bug report button
     - [ ] song request button
-  - [ ] **Profile page**
-    - [ ] styling
-    - [ ] repertoire
   - [ ] **create songbook**
   - [ ] **follow page**
-  - [ ] **login player**
-    - [ ] **profile**
-    - [ ] **repertoire dispaly**
-    - [ ] **buttons for adding and removing songs to repertoire**
+  - [ ] **Profile page**
+    - [x] profile
+    - [x] repertoire dispaly
+    - [x] buttons for adding and removing songs to repertoire
     - [ ] **set password for singers ???**
     - [ ] **change user settings**
+    - [ ] **styling**
     - [ ] generate qr code
     - [ ] import from ultimateguitar?
   - [ ] **"login" singer**

@@ -13,12 +13,12 @@ const LetterGroup: React.FC<{ letter: string }> = ({ letter }) => {
         <span className="flex flex-row items-start pl-4 text-sm">Kein Lied vorhanden</span>
         :
         songs.map((song: string, index: number) => (
-          <span
+          <div
             key={index}
-            className="flex flex-row items-start underline-offset-4 hover:underline pl-4"
+            className="container flex flex-row items-start underline-offset-4 hover:underline pl-4"
           >
             <SongListElement id={song} />
-          </span>
+          </div>
         ))}
       </div>
     </>

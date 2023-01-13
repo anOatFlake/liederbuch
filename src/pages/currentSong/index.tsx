@@ -6,9 +6,10 @@ import { trpc } from "../../utils/trpc";
 
 const CurrentSong = (songData: any) => {
   //useRouter ??? --> params instead of paths
-  const { data: repertoireData } = trpc.repertoire.getRepertoireViaInviteCode.useQuery('test');
+  const { data: repertoireData } =
+    trpc.repertoire.getRepertoireViaInviteCode.useQuery("test");
 
-  return <></>
+  return <></>;
 };
 
 export default CurrentSong;

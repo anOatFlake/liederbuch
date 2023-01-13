@@ -59,4 +59,20 @@ export const repertoireRouter = router({
       });
       return { removed: result };
     }),
+
+    setCurrentSong: protectedProcedure.input(z.string()).mutation(async ({ input, ctx }) => {
+      const currentRep = await ctx.prisma.repertoire.findUnique({
+        where: {
+          userId: ctx.session.user.id,
+        },
+      });
+      const result = await ctx.prisma.repertoire.update({
+        where: {
+          userId: ctx.session.user.id,
+        },
+        data: {
+          currentSong: input
+        }
+      })
+    }),
 });

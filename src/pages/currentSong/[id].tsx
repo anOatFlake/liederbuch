@@ -1,8 +1,9 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
+import { getSongData } from "../../utils/song";
 // isr???
 // theo link shortener --> vercel middleware
 
@@ -11,13 +12,10 @@ const Current: NextPage = () => {
     const { id } = router.query
 
     const { data } = trpc.repertoire.getRepertoireViaInviteCode.useQuery(id as string)
-
     return (
         <>
-            <Head>
-            </Head>
-            <SideBar />
-            <main>
+      <SideBar />
+      <main>
                 <div>Songs: {data?.songs}</div>
             </main>
         </>

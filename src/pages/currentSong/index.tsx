@@ -1,32 +1,14 @@
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
+import { trpc } from "../../utils/trpc";
 
 // Statemanagement via Zustand https://github.com/pmndrs/zustand
 
 const CurrentSong = (songData: any) => {
-  const loggedIn = true; // TODO: Login request
+  //useRouter ??? --> params instead of paths
+  const { data: repertoireData } = trpc.repertoire.getRepertoireViaInviteCode.useQuery('test');
 
-  return !loggedIn ? (
-    <></>
-  ) : (
-    <>
-      <Head>
-        <title>{songData.id}</title>
-        <meta
-          name="description"
-          content="Songtext for the song {songData.id}"
-        ></meta>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <SideBar />
-      <main>
-        <div
-          className="pt-14 md:pl-2 md:pt-4"
-          dangerouslySetInnerHTML={{ __html: songData.contentHtml }}
-        />
-      </main>
-    </>
-  );
+  return <></>
 };
 
 export default CurrentSong;

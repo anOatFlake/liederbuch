@@ -8,12 +8,13 @@ import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
 import SongMenu from "../../components/songMenu";
+import { cleanUpTitle } from "../../utils/songtitle";
 
 const Song: NextPage = ({ songData }: any) => {
   return (
     <>
       <Head>
-        <title>{songData.id}</title>
+        <title>{cleanUpTitle(songData.id)}</title>
         <meta
           name="description"
           content="Songtext for the song {songData.id}"

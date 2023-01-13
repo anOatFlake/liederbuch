@@ -14,7 +14,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const addSong = trpc.repertoire.addSongToRepertoire.useMutation();
   const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
 
-  return sessionData ? (
+  return true ? (
     !isInReperoire ? (
       //TODO: Button styling --> Icons https://github.com/Templarian/MaterialDesign or https://github.com/feathericons/feather
       <button

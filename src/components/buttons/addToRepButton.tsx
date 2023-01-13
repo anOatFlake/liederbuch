@@ -19,7 +19,7 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
       //TODO: Button styling --> Icons https://github.com/Templarian/MaterialDesign or https://github.com/feathericons/feather
       <button
         id={id}
-        className="inline-block p-1 h-7 w-7 rounded-full border-2 bg-teal-400 hover:border-teal-600 dark:border-slate-900 dark:bg-teal-900"
+        className="inline-block h-7 w-7 rounded-full border-2 bg-teal-400 p-1 hover:border-teal-600 dark:border-slate-900 dark:bg-teal-900"
         onClick={() => {
           addSong.mutate(id);
           setIsInRepertoire(true);
@@ -30,13 +30,13 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
     ) : (
       <button
         id={id}
-        className="inline-block p-1 h-7 w-7 rounded-full border-2 bg-red-300 hover:border-red-500 dark:border-slate-900 dark:bg-red-900"
+        className="inline-block h-7 w-7 rounded-full border-2 bg-red-300 p-1 hover:border-red-500 dark:border-slate-900 dark:bg-red-900"
         onClick={() => {
           removeSong.mutate(id);
           setIsInRepertoire(false);
         }}
       >
-      <img src="/icons/x-mark.svg" alt="removeIcon"></img>
+        <img src="/icons/x-mark.svg" alt="removeIcon"></img>
       </button>
     )
   ) : (

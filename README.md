@@ -2,6 +2,10 @@ This is an app is a songbook collection with guitar chords, where the singers ar
 
 TODOs:
 
+- [ ] LetterGroup css override with selected
+- [ ] Replace Ref. in html song templates
+- [ ] wenn der abend naht --> below
+
 - [ ] Pages
   - [x] Song
     - [x] ~~addSongToRep-button/removeSongFromRep-button (with dropdown)~~
@@ -58,3 +62,17 @@ TODOs:
   - [x] ~~deploying database~~
 - [ ] far future: stress test user
 - [ ] **logging**
+
+
+SONGS TO ADD:
+- [ ] Bock Schilf
+- [ ] Bock der pete
+- [ ] drei rote pfiffer
+- [ ] doppelbock panama
+- [ ] Jbock miroschaka
+- [ ] Loch lomond --> DEUTSCH 
+
+TEXT NOT RIGHT??
+- [ ] Jalava
+- [ ] ye jacobites by name
+- [ ] leise weht der wind

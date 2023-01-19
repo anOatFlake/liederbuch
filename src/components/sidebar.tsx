@@ -80,6 +80,7 @@ const SideBar: React.FC = () => {
                     pathname: "/songs",
                     query: { letter: letter },
                   }}
+                  passHref={true}
                   onClick={() => setExpanded(false)}
                 >
                   {letter}

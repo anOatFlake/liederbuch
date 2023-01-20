@@ -9,13 +9,15 @@ export const repertoireRouter = router({
       },
     });
   }),
-  getRepertoireViaInviteCode: publicProcedure.input(z.string()).query(({ ctx, input }) => {
-    return ctx.prisma.repertoire.findUnique({
-      where: {
-        inviteCode: input
-      },
-    });
-  }),
+  getRepertoireViaInviteCode: publicProcedure
+    .input(z.string())
+    .query(({ ctx, input }) => {
+      return ctx.prisma.repertoire.findUnique({
+        where: {
+          inviteCode: input,
+        },
+      });
+    }),
 
   addSongToRepertoire: protectedProcedure
     .input(z.string())
@@ -58,5 +60,23 @@ export const repertoireRouter = router({
         },
       });
       return { removed: result };
+    }),
+
+  setCurrentSong: protectedProcedure
+    .input(z.string())
+    .mutation(async ({ input, ctx }) => {
+      const currentRep = await ctx.prisma.repertoire.findUnique({
+        where: {
+          userId: ctx.session.user.id,
+        },
+      });
+      const result = await ctx.prisma.repertoire.update({
+        where: {
+          userId: ctx.session.user.id,
+        },
+        data: {
+          currentSong: input,
+        },
+      });
     }),
 });

@@ -19,14 +19,14 @@ const Songs: NextPage = () => {
       <SideBar />
       <main>
         <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
-            {typeof letter === 'string' ? (
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
+            {typeof letter === "string" ? (
               <LetterGroup letter={letter} />
-            ) : 
+            ) : (
               LETTERS.map((letter: string, index: number) => (
                 <LetterGroup letter={letter} />
               ))
-            }
+            )}
           </div>
         </div>
       </main>

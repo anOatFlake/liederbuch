@@ -1,6 +1,6 @@
-import { NextPage } from "next"
+import { NextPage } from "next";
 
 const Songbooks: NextPage = () => {
-    return <></>
-}
-export default Songbooks
+  return <></>;
+};
+export default Songbooks;

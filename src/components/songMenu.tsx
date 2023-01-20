@@ -13,7 +13,7 @@ const SongMenu: React.FC<{ id: string }> = ({ id }) => {
       </div>
       <div className="container">
         Mit Sängern teilen: (WIP)
-        <CurrentSongButton />
+        <CurrentSongButton id={id}/>
       </div>
     </div>
   ) : (

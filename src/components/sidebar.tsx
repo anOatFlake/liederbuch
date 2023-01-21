@@ -80,6 +80,7 @@ const SideBar: React.FC = () => {
                     pathname: "/songs",
                     query: { letter: letter },
                   }}
+                  passHref={true}
                   onClick={() => setExpanded(false)}
                 >
                   {letter}
@@ -137,11 +138,12 @@ const SideBar: React.FC = () => {
               key={letter}
               className="p-2 text-center underline-offset-4 hover:underline"
             >
-              <Link
+              <Link 
                 href={{
                   pathname: "/songs",
                   query: { letter: letter },
                 }}
+                passHref={true}
               >
                 {letter}
               </Link>

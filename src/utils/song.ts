@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { LETTERS } from "../data/letters";
 import { ALL_SONGS } from "../data/songIds";
 
 const songsDirectory = path.join(process.cwd(), "src", "songs");
@@ -44,6 +45,17 @@ export function getAllSongPaths(): Array<{
     return {
       params: {
         id: fileName,
+      },
+    };
+  });
+}
+export function getAllLetterPaths(): Array<{
+  params: { [key: string]: string };
+}> {
+  return LETTERS.map((l: string) => {
+    return {
+      params: {
+        letter: l,
       },
     };
   });

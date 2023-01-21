@@ -1,6 +1,10 @@
 This is an app is a songbook collection with guitar chords, where the singers are able to follow the guitar player.
 
-TODOs:
+## TODOs:
+
+- [ ] LetterGroup css override with selected
+- [ ] Replace Ref. in html song templates
+- [ ] wenn der abend naht --> below
 
 - [ ] Pages
   - [x] Song
@@ -58,3 +62,23 @@ TODOs:
   - [x] ~~deploying database~~
 - [ ] far future: stress test user
 - [ ] **logging**
+
+
+## SONGS TO ADD:
+- [ ] Bock Schilf
+- [ ] Bock der pete
+- [ ] drei rote pfiffer
+- [ ] doppelbock panama
+- [ ] Jbock miroschaka
+- [ ] Loch lomond --> DEUTSCH 
+
+## TEXT NOT RIGHT??
+- [ ] Jalava
+- [ ] ye jacobites by name
+- [ ] leise weht der wind
+
+## WEIRD CHORD HTML:
+- [ ] What shall we do with the drunken sailor
+- [ ] Wer bist du wirklich
+- [ ] Wenn der Abend naht
+- [ ] Wake me up when september ends

@@ -17,23 +17,22 @@ const Songs: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SideBar />
-      <main>{typeof letter === "string" ? (
-              <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
-                <div className="grid grid-cols-1 gap-4">
-              
+      <main>
+        {typeof letter === "string" ? (
+          <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
+            <div className="grid grid-cols-1 gap-4">
               <LetterGroup letter={letter} />
+            </div>
           </div>
-        </div>
-            ) : (
-              <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
-                <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
-                  
-             { LETTERS.map((letter: string, index: number) => (
+        ) : (
+          <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
+              {LETTERS.map((letter: string, index: number) => (
                 <LetterGroup letter={letter} />
               ))}
+            </div>
           </div>
-        </div>
-            )}
+        )}
       </main>
     </>
   );

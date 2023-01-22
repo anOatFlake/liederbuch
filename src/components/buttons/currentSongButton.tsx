@@ -3,7 +3,12 @@ import { trpc } from "../../utils/trpc";
 
 const CurrentSongButton: React.FC<{ id: string }> = ({ id }) => {
   const { data: sessionData } = useSession();
-  const selectCurrentSong = trpc.repertoire.setCurrentSong.useMutation();
+  const selectCurrentSong = trpc.repertoire.setCurrentSong.useMutation({
+    onSuccess: () => {
+      //send serverside event for new song id
+      
+    }
+  });
 
   //if logged in
   return sessionData ? (

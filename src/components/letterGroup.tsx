@@ -1,11 +1,11 @@
 import { getSongsByLetter } from "../utils/songtitle";
 import SongListElement from "./songListElement";
 
-const LetterGroup: React.FC<{ letter: string }> = ({ letter }) => {
+const LetterGroup: React.FC<{ letter: string, hidden: boolean }> = ({ letter, hidden }) => {
   const songs = getSongsByLetter(letter);
   return (
-    <>
-      <div>
+    hidden ? <></>:
+    <div>
         <div className="font-serif text-3xl text-teal-500/50">{letter}</div>
         {songs.length === 0 ? (
           <span className="flex flex-row items-start pl-4 text-sm">
@@ -21,8 +21,7 @@ const LetterGroup: React.FC<{ letter: string }> = ({ letter }) => {
             </div>
           ))
         )}
-      </div>
-    </>
+    </div>
   );
 };
 export default LetterGroup;

@@ -69,7 +69,7 @@ This is an app is a songbook collection with guitar chords, where the singers ar
 - [ ] Bock der pete
 - [ ] drei rote pfiffer
 - [ ] doppelbock panama
-- [ ] Jbock miroschaka
+- [ ] Bock miroschaka
 - [ ] Loch lomond --> DEUTSCH 
 
 ## TEXT NOT RIGHT??

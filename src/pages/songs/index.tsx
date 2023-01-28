@@ -4,19 +4,18 @@ import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
 import LetterGroup from "../../components/letterGroup";
 import { LETTERS } from "../../data/letters";
-import { string } from "zod";
 
 const Songs: NextPage = () => {
   const router = useRouter();
   const { letter } = router.query;
 
   const isLetterGroupHidden = (letterGroupLetter: string) => {
-    if (typeof letter === 'string') {
-      return letterGroupLetter !== letter
+    if (typeof letter === "string") {
+      return letterGroupLetter !== letter;
     } else {
       return false;
     }
-  }
+  };
 
   return (
     <>
@@ -27,14 +26,17 @@ const Songs: NextPage = () => {
       </Head>
       <SideBar />
       <main>
-          <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
-              {LETTERS.map((letter: string, index: number) => (
-                <LetterGroup letter={letter} hidden={isLetterGroupHidden(letter)}/>
-              ))}
-            </div>
+        <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
+            {LETTERS.map((letter: string) => (
+              <LetterGroup
+                letter={letter}
+                hidden={isLetterGroupHidden(letter)}
+                key={letter}
+              />
+            ))}
           </div>
-        
+        </div>
       </main>
     </>
   );

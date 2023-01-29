@@ -6,6 +6,8 @@ import { trpc } from "../utils/trpc";
 import { repertoireAsArray } from "../utils/repertoire";
 import { useEffect, useState } from "react";
 import SongListElement from "../components/songListElement";
+import Image from "next/image";
+import ProfileCard from "../components/profileCard";
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession();
@@ -14,8 +16,7 @@ const Profile: NextPage = () => {
 
   const [songs, setSongs] = useState(repertoireAsArray(repData?.songs));
 
-  const removeSong = trpc.repertoire.removeSongFromRepertoire.useMutation();
-
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   useEffect(() => {}, [songs]);
 
   console.log(songs);
@@ -29,24 +30,13 @@ const Profile: NextPage = () => {
       </Head>
       <SideBar />
       <main>
-        <div className="pl-2 pt-16 md:pl-4 md:pt-4">
-          {userData?.image ? (
-            <img
-              className="h-20 w-20 rounded-full"
-              src={userData.image}
-              alt="Profile Picture"
-            ></img>
-          ) : (
-            <></>
-          )}
-          <div>
-            <span className="">Username: </span>
-            <span>{sessionData?.user?.name}</span>
-          </div>
-          <div>
-            <span className="">Email: </span>
-            <span className="">{sessionData?.user?.email}</span>
-          </div>
+        <div className="px-6 pt-16 md:pl-4 md:pt-4">
+          <ProfileCard
+            uname={userData?.name}
+            email={userData?.email}
+            image={userData?.image}
+            inviteCode={repData?.inviteCode}
+          />
         </div>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">
           <div>

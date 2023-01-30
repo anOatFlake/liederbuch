@@ -11,20 +11,22 @@ const LetterGroup: React.FC<{ letter: string; hidden: boolean }> = ({
   ) : (
     <div>
       <div className="font-serif text-3xl text-teal-500/50">{letter}</div>
-      {songs.length === 0 ? (
-        <span className="flex flex-row items-start pl-4 text-sm">
-          Kein Lied vorhanden
-        </span>
-      ) : (
-        songs.map((song: string, index: number) => (
-          <div
-            key={index}
-            className="container flex flex-row items-start pl-4 underline-offset-4 hover:underline"
-          >
-            <SongListElement id={song} />
-          </div>
-        ))
-      )}
+      <ul>
+        {songs.length === 0 ? (
+          <li className="flex flex-row items-start pl-4 text-sm">
+            Kein Lied vorhanden
+          </li>
+        ) : (
+          songs.map((song: string, index: number) => (
+            <li
+              key={index}
+              className="container flex flex-row items-start pl-4 underline-offset-4 hover:underline"
+            >
+              <SongListElement id={song} />
+            </li>
+          ))
+        )}
+      </ul>
     </div>
   );
 };

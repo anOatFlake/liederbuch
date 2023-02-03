@@ -9,8 +9,8 @@ const LetterGroup: React.FC<{ letter: string; hidden: boolean }> = ({
   return hidden ? (
     <></>
   ) : (
-    <div>
-      <div className="font-serif text-3xl text-teal-500/50">{letter}</div>
+    <span className="max-h-fit">
+      <span className="font-serif text-3xl text-teal-500/50">{letter}</span>
       <ul>
         {songs.length === 0 ? (
           <li className="flex flex-row items-start pl-4 text-sm">
@@ -27,7 +27,7 @@ const LetterGroup: React.FC<{ letter: string; hidden: boolean }> = ({
           ))
         )}
       </ul>
-    </div>
+    </span>
   );
 };
 export default LetterGroup;

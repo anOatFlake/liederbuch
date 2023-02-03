@@ -4,7 +4,7 @@ import { cleanUpTitle } from "../utils/songtitle";
 
 const SongListElement: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <div className="container flex flex-row flex-nowrap pr-12">
+    <div className="container flex flex-row flex-nowrap items-center pr-12">
       <div className="grow  text-sm">
         <Link href={`/songs/${encodeURIComponent(id)}`}>
           {cleanUpTitle(id)}

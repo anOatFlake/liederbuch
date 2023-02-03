@@ -32,10 +32,10 @@ const Profile: NextPage = () => {
       <main>
         <div className="px-6 pt-16 md:pl-4 md:pt-4">
           <ProfileCard
-            uname={userData?.name}
-            email={userData?.email}
-            image={userData?.image}
-            inviteCode={repData?.inviteCode}
+            uname={userData?.name ?? "nicht verfügbar"}
+            email={userData?.email ?? "nicht verfügbar"}
+            image={userData?.image ?? ""}
+            inviteCode={repData?.inviteCode ?? "nicht verfügbar"}
           />
         </div>
         <div className="pl-2 pt-16 md:pl-4 md:pt-4">

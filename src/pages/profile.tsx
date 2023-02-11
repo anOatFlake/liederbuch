@@ -43,10 +43,6 @@ const Profile: NextPage = () => {
             <span>Repertoire</span>
           </div>
           <div>
-            <span className="">inviteCode: </span>
-            <span className="">{repData?.inviteCode}</span>
-          </div>
-          <div>
             List with rep songs -- Filter???
             <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
               <ul>

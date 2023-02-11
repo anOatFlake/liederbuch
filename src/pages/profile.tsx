@@ -30,7 +30,7 @@ const Profile: NextPage = () => {
       </Head>
       <SideBar />
       <main>
-        <div className="px-6 pt-16 md:pl-4 md:pt-4">
+        <div className="px-6 pt-16 md:max-w-max md:pl-4 md:pt-4">
           <ProfileCard
             uname={userData?.name ?? "nicht verfügbar"}
             email={userData?.email ?? "nicht verfügbar"}

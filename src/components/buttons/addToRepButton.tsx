@@ -3,6 +3,7 @@ import { trpc } from "../../utils/trpc";
 import { isSongInRepertoire } from "../../utils/repertoire";
 import { useEffect, useState } from "react";
 
+// TODO: move state setting to input var (loggedin? & inRep?)
 const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
   const { data: sessionData } = useSession();
 
@@ -16,7 +17,6 @@ const AddToRepButton: React.FC<{ id: string }> = ({ id }) => {
 
   return sessionData ? (
     !isInReperoire ? (
-      //TODO: Button styling --> Icons https://github.com/Templarian/MaterialDesign or https://github.com/feathericons/feather
       <button
         id={id}
         className="inline-block h-7 w-7 rounded-full border-2 bg-teal-400 p-1 hover:border-teal-600 dark:border-slate-900 dark:bg-teal-900"

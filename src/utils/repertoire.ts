@@ -17,5 +17,5 @@ export function isSongInRepertoire(
  * @returns string[]
  */
 export function repertoireAsArray(allSongs: string | null | undefined) {
-  return allSongs?.split(", ");
+  return allSongs?.split(", ").filter(Boolean);
 }

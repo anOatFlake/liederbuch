@@ -43,15 +43,14 @@ const Profile: NextPage = () => {
             <span>Repertoire</span>
           </div>
           <div>
-            List with rep songs -- Filter???
-            <div className="mx-auto max-w-sm pl-2 pt-16 md:container md:pl-8 md:pt-4">
+            <div className="mx-auto max-w-sm justify-center px-6 pt-16 md:container md:pl-8 md:pt-4">
               <ul>
                 {repertoireAsArray(repData?.songs)
                   ?.sort((x, y) => (x > y ? 1 : x < y ? -1 : 0))
                   .map((song: string, index: number) => (
                     <li
                       key={index}
-                      className="flex flex-row items-start pb-1 pl-2 underline-offset-4 hover:underline"
+                      className="items-start pb-1 underline-offset-4 hover:underline"
                     >
                       <SongListElement id={song} />
                     </li>

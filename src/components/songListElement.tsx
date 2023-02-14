@@ -4,13 +4,13 @@ import { cleanUpTitle } from "../utils/songtitle";
 
 const SongListElement: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <div className="container flex flex-row flex-nowrap items-center pr-12">
-      <div className="grow  text-sm">
+    <div className="container flex min-w-min flex-row flex-nowrap items-center ">
+      <div className="grow text-sm">
         <Link href={`/songs/${encodeURIComponent(id)}`}>
           {cleanUpTitle(id)}
         </Link>
       </div>
-      <div className=":pr-10 flex-none px-4">
+      <div className="flex-none px-4">
         <AddToRepButton id={id} />
       </div>
     </div>

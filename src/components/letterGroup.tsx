@@ -20,7 +20,7 @@ const LetterGroup: React.FC<{ letter: string; hidden: boolean }> = ({
           songs.map((song: string, index: number) => (
             <li
               key={index}
-              className="container flex flex-row items-start pl-4 underline-offset-4 hover:underline"
+              className="container flex flex-row items-start px-4 underline-offset-4 hover:underline"
             >
               <SongListElement id={song} />
             </li>

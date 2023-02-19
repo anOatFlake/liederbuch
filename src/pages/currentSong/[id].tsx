@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
+import { getSongData } from "../../utils/song";
 // isr???
 // theo link shortener --> vercel middleware
 

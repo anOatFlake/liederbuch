@@ -10,7 +10,7 @@ const Current: NextPage = () => {
   const { id } = router.query;
 
   const apiPath = ("api/sse/" + id) as string;
-  const evtSource = new EventSource(apiPath);
+  //const evtSource = new EventSource(apiPath);
 
   const { data: repData } = trpc.repertoire.getRepertoireViaInviteCode.useQuery(
     id as string

@@ -6,8 +6,7 @@ const CurrentSongButton: React.FC<{ id: string }> = ({ id }) => {
   const selectCurrentSong = trpc.repertoire.setCurrentSong.useMutation({
     onSuccess: () => {
       //send serverside event for new song id
-      
-    }
+    },
   });
 
   //if logged in

@@ -69,7 +69,7 @@ This is an app is a songbook collection with guitar chords, where the singers ar
 - [ ] Bock der pete
 - [ ] drei rote pfiffer
 - [ ] doppelbock panama
-- [ ] Jbock miroschaka
+- [ ] Bock miroschaka
 - [ ] Loch lomond --> DEUTSCH 
 
 ## TEXT NOT RIGHT??
@@ -82,3 +82,6 @@ This is an app is a songbook collection with guitar chords, where the singers ar
 - [ ] Wer bist du wirklich
 - [ ] Wenn der Abend naht
 - [ ] Wake me up when september ends
+- [ ] star of the county down
+- [ ] roter wein
+- [ ] regenwald

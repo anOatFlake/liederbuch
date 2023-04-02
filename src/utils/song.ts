@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { LETTERS } from "../data/letters";
+import { LETTERS, Letter } from "../data/letters";
 import { ALL_SONGS } from "../data/songIds";
 
 const songsDirectory = path.join(process.cwd(), "src", "songs");
@@ -73,4 +73,29 @@ export async function getSongData(id: string | string[] | undefined) {
     id,
     contentHtml,
   };
+}
+
+/**
+ * This helper functions determins if a letter has no songs
+ * @param letter
+ */
+export function hasSongs(letter: Letter): boolean {
+  if (letter === "0-9") {
+    return ALL_SONGS.filter(
+      (song) =>
+        song[0] === "0" ||
+        song[0] === "1" ||
+        song[0] === "2" ||
+        song[0] === "3" ||
+        song[0] === "4" ||
+        song[0] === "5" ||
+        song[0] === "6" ||
+        song[0] === "7" ||
+        song[0] === "8" ||
+        song[0] === "9"
+    )
+      ? true
+      : false;
+  }
+  return ALL_SONGS.filter((song) => song.startsWith(letter)) ? true : false;
 }

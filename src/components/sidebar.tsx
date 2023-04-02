@@ -2,6 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 import { LETTERS } from "../data/letters";
+import { useRouter } from "next/router";
 
 /**
  * The navigation sidebar
@@ -9,6 +10,8 @@ import { LETTERS } from "../data/letters";
 const SideBar: React.FC = () => {
   const { data: sessionData } = useSession();
   const [expanded, setExpanded] = useState(false);
+
+  const router = useRouter();
 
   return (
     <>
@@ -82,7 +85,11 @@ const SideBar: React.FC = () => {
             {LETTERS.map((letter: string) => (
               <button
                 key={letter}
-                className="p-2 text-center underline-offset-4 hover:underline"
+                className={
+                  router.query.letter === letter
+                    ? "p-2 text-center underline underline-offset-4"
+                    : "p-2 text-center underline-offset-4 hover:underline"
+                }
               >
                 <Link
                   href={{
@@ -166,7 +173,11 @@ const SideBar: React.FC = () => {
           {LETTERS.map((letter: string) => (
             <button
               key={letter}
-              className="p-2 text-center underline-offset-4 hover:underline"
+              className={
+                router.query.letter === letter
+                  ? "p-2 text-center underline underline-offset-4"
+                  : "p-2 text-center underline-offset-4 hover:underline"
+              }
             >
               <Link
                 href={{

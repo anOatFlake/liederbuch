@@ -1,3 +1,4 @@
+import { Letter } from "../data/letters";
 import { ALL_SONGS } from "../data/songIds";
 
 /**
@@ -46,8 +47,8 @@ function replaceSharpS(id: string): string {
 
 /**
  * returns all songs that start with a certain letter or with any number
- * @param letter 
- * @returns 
+ * @param letter
+ * @returns
  */
 export function getSongsByLetter(letter: string): string[] {
   return letter !== "0-9"
@@ -57,4 +58,29 @@ export function getSongsByLetter(letter: string): string[] {
     : ALL_SONGS.filter((songName: string) => {
         return /^\d/.test(songName) || /^\W/.test(songName);
       });
+}
+
+/**
+ * This helper functions determins if a letter has no songs
+ * @param letter
+ */
+export function hasSongs(letter: Letter): boolean {
+  if (letter === "0-9") {
+    return ALL_SONGS.filter(
+      (song) =>
+        song[0] === "0" ||
+        song[0] === "1" ||
+        song[0] === "2" ||
+        song[0] === "3" ||
+        song[0] === "4" ||
+        song[0] === "5" ||
+        song[0] === "6" ||
+        song[0] === "7" ||
+        song[0] === "8" ||
+        song[0] === "9"
+    )
+      ? true
+      : false;
+  }
+  return ALL_SONGS.filter((song) => song.startsWith(letter)) ? true : false;
 }

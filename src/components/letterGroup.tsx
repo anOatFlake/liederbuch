@@ -1,4 +1,4 @@
-import { getSongsByLetter } from "../utils/songtitle";
+import { getSongsByLetter } from "../utils/songs";
 import SongListElement from "./songListElement";
 
 const LetterGroup: React.FC<{ letter: string; hidden: boolean }> = ({

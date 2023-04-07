@@ -4,11 +4,11 @@ import type {
   NextPage,
   GetStaticPropsContext,
 } from "next";
-import { getAllSongPaths, getSongData } from "../../utils/song";
+import { getAllSongPaths, getSongData } from "../../utils/songpaths";
 import Head from "next/head";
 import SideBar from "../../components/sidebar";
 import SongMenu from "../../components/songMenu";
-import { cleanUpTitle } from "../../utils/songtitle";
+import { cleanUpTitle } from "../../utils/songs";
 
 const Song: NextPage = ({ songData }: any) => {
   return (

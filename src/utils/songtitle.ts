@@ -46,8 +46,8 @@ function replaceSharpS(id: string): string {
 
 /**
  * returns all songs that start with a certain letter or with any number
- * @param letter 
- * @returns 
+ * @param letter
+ * @returns
  */
 export function getSongsByLetter(letter: string): string[] {
   return letter !== "0-9"

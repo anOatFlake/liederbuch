@@ -1,5 +1,5 @@
 import type { GetServerSideProps, NextPage } from "next";
-import SideBar from "../../components/sidebar";
+import SideBar from "../../components_old/sidebar";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
 import { getSongData } from "../../utils/song";

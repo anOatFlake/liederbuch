@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
-import SideBar from "../components/sidebar";
+import SideBar from "../components_old/sidebar";
 import { trpc } from "../utils/trpc";
 import { repertoireAsArray } from "../utils/repertoire";
 import { useEffect, useState } from "react";
-import SongListElement from "../components/songListElement";
-import ProfileCard from "../components/profileCard";
+import SongListElement from "../components_old/songListElement";
+import Image from "next/image";
+import ProfileCard from "../components_old/profileCard";
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession();

@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import SideBar from "../../components/sidebar";
+import SideBar from "../../components_old/sidebar";
 import { useRouter } from "next/router";
-import LetterGroup from "../../components/letterGroup";
+import LetterGroup from "../../components_old/letterGroup";
 import { LETTERS } from "../../data/letters";
 
 const Songs: NextPage = () => {

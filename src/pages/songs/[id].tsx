@@ -6,8 +6,8 @@ import type {
 } from "next";
 import { getAllSongPaths, getSongData } from "../../utils/song";
 import Head from "next/head";
-import SideBar from "../../components/sidebar";
-import SongMenu from "../../components/songMenu";
+import SideBar from "../../components_old/sidebar";
+import SongMenu from "../../components_old/songMenu";
 import { cleanUpTitle } from "../../utils/songtitle";
 
 const Song: NextPage = ({ songData }: any) => {

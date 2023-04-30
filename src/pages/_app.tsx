@@ -2,7 +2,7 @@
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { type Session } from "next-auth";
-import SideBar from "../components/sidebar";
+import SideBar from "../components_old/sidebar";
 import "../styles/globals.css";
 import { trpc } from "../utils/trpc";
 

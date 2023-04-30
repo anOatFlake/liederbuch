@@ -1,5 +1,5 @@
 import Head from "next/head";
-import SideBar from "../../components/sidebar";
+import SideBar from "../../components_old/sidebar";
 import { trpc } from "../../utils/trpc";
 
 // Statemanagement via Zustand https://github.com/pmndrs/zustand

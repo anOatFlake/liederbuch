@@ -10,7 +10,7 @@ const Current: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const apiPath = ("api/sse/" + id) as string;
+  const apiPath = ("api/song/" + id) as string;
   //const evtSource = new EventSource(apiPath);
 
   const { data: repData } = trpc.repertoire.getRepertoireViaInviteCode.useQuery(
@@ -33,6 +33,10 @@ export default Current;
 export const getServerSideProps = async () => {
   return { props: {} };
 };
+
+//NEW THOUGHTS!
+//FETCH DB CURRENT SONG AND THEN PUT THAT IN THE FILE LOADER API (AKA SONG[SONGID])
+//checkout uswSWR
 
 //Thoughts
 //EventSource --> subscribes to target --> Question houy do you implement the target

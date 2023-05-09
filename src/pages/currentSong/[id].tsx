@@ -36,7 +36,7 @@ export const getServerSideProps = async () => {
 
 //NEW THOUGHTS!
 //FETCH DB CURRENT SONG AND THEN PUT THAT IN THE FILE LOADER API (AKA SONG[SONGID])
-//checkout uswSWR
+//checkout uswSWR and this https://vercel.com/guides/loading-static-file-nextjs-api-route
 
 //Thoughts
 //EventSource --> subscribes to target --> Question houy do you implement the target

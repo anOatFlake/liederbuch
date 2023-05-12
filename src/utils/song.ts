@@ -3,7 +3,7 @@ import path from "path";
 import { LETTERS } from "../data/letters";
 import { ALL_SONGS } from "../data/songIds";
 
-const songsDirectory = path.join(process.cwd(), "src", "songs");
+const songsDirectory = path.join(process.cwd(), "public", "songs");
 
 /**
  * Gets all song names (aka filenames) from the songsDirectory

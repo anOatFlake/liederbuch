@@ -3,6 +3,7 @@ import SideBar from "../../components/sidebar";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
 import { getSongData } from "../../utils/song";
+import { Suspense } from "react";
 // isr???
 // theo link shortener --> vercel middleware
 
@@ -21,7 +22,9 @@ const Current: NextPage = () => {
     <>
       <SideBar />
       <main>
-        <div>Songs: {repData?.currentSong}</div>
+        <Suspense fallback={"LOADING FALLBACK"}>
+          <div>Songs: {repData?.currentSong}</div>
+        </Suspense>
       </main>
     </>
   );
@@ -37,6 +40,9 @@ export const getServerSideProps = async () => {
 //NEW THOUGHTS!
 //FETCH DB CURRENT SONG AND THEN PUT THAT IN THE FILE LOADER API (AKA SONG[SONGID])
 //checkout uswSWR and this https://vercel.com/guides/loading-static-file-nextjs-api-route
+
+//LOADING SUSPENSE
+//https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming
 
 //Thoughts
 //EventSource --> subscribes to target --> Question houy do you implement the target

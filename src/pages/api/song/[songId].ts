@@ -2,7 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 
-const songsDirectory = path.join(process.cwd(), "src", "songs");
+const songsDirectory = path.join(process.cwd(), "public", "songs");
 
 const songdata = async (req: NextApiRequest, res: NextApiResponse) => {
   const songPath = path.join(songsDirectory, `Bella_Ciao.html`);

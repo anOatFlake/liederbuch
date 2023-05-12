@@ -23,7 +23,7 @@ const Current: NextPage = () => {
       <SideBar />
       <main>
         <Suspense fallback={"LOADING FALLBACK"}>
-          <div>Songs: {repData?.currentSong}</div>
+          <div className="pt-24">Songs: {repData?.currentSong}</div>
         </Suspense>
       </main>
     </>

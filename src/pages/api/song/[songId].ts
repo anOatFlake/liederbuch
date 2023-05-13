@@ -4,11 +4,12 @@ import path from "path";
 
 const songsDirectory = path.join(process.cwd(), "public", "songs");
 
-const songdata = async (req: NextApiRequest, res: NextApiResponse) => {
-  const songPath = path.join(songsDirectory, `Bella_Ciao.html`);
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { songId } = req.query;
+  const songPath = path.join(songsDirectory, songId + `.html`);
   const songContent = fs.readFileSync(songPath, `utf-8`);
   res.send({
     content: songContent,
   });
 };
-export default songdata;
+export default handler;

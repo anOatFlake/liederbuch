@@ -6,7 +6,6 @@ import { trpc } from "../utils/trpc";
 import { repertoireAsArray } from "../utils/repertoire";
 import { useEffect, useState } from "react";
 import SongListElement from "../components/songListElement";
-import Image from "next/image";
 import ProfileCard from "../components/profileCard";
 
 const Profile: NextPage = () => {
@@ -38,7 +37,7 @@ const Profile: NextPage = () => {
             inviteCode={repData?.inviteCode ?? "nicht verfügbar"}
           />
         </div>
-        <div className="pl-2 pt-16 md:pl-4 md:pt-4">
+        <div className="pt-16 pl-2 md:pl-4 md:pt-4">
           <div>
             <span>Repertoire</span>
           </div>

@@ -1,3 +1,4 @@
+export type Song = typeof ALL_SONGS[number];
 export const ALL_SONGS = [
   "1-2_Lovesong",
   "1000_gute_Gruende",
@@ -539,4 +540,4 @@ export const ALL_SONGS = [
   "Zu_spaet",
   "Zwei",
   "Zwei_kleine_Woelfe",
-];
+] as const;

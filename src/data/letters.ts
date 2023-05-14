@@ -1,3 +1,4 @@
+export type Letter = typeof LETTERS[number];
 export const LETTERS = [
   "A",
   "B",
@@ -26,4 +27,4 @@ export const LETTERS = [
   "Y",
   "Z",
   "0-9",
-];
+] as const;

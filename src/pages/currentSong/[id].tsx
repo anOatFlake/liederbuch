@@ -10,28 +10,24 @@ import { error } from "console";
 // theo link shortener --> vercel middleware
 
 const Current: NextPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+  const { id } = useRouter().query;
 
-  //const evtSource = new EventSource(apiPath);
-  /*
-  const { data: repData } = trpc.repertoire.getRepertoireViaInviteCode.useQuery(
-    id as string
-  );
-*/
-  const apiPath = "http://localhost:3000/api/song/2_Ringe" as string;
+  const apiPath =
+    "http://localhost:3000/api/song/" +
+    trpc.repertoire.getRepertoireViaInviteCode.useQuery(id as string).data
+      ?.currentSong;
   const { isLoading, isError, data } = useQuery(["songData"], async () =>
     fetch(apiPath).then((res) => res.json())
   );
+
   return (
     <>
       <SideBar />
       <main>
-        <Suspense fallback={"LOADING FALLBACK"}>
-          {(isLoading || isError) ?? (
-            <div className="pt-24">Songs: {data} </div>
-          )}
-        </Suspense>
+        <div
+          className="pt-14 md:pl-2 md:pt-4"
+          dangerouslySetInnerHTML={{ __html: data?.content }}
+        />
       </main>
     </>
   );
@@ -39,7 +35,7 @@ const Current: NextPage = () => {
 
 export default Current;
 
-//TODO!
+//TODO! better sync
 export const getServerSideProps = async () => {
   return { props: {} };
 };

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { LETTERS } from "../data/letters";
 import { useRouter } from "next/router";
+import { Toggle } from "./ui/toggle";
+import { Book, BookOpen, List, Music, Pencil, PersonStanding, Scroll, Search } from "lucide-react";
 
 /**
  * The navigation sidebar
@@ -132,18 +134,18 @@ const SideBar: React.FC = () => {
 
       <nav className="fixed top-0 hidden h-full w-64 border-r-2 border-gray-400 p-4 dark:border-gray-700 md:block">
         <div className="mt-6 px-4 tracking-widest underline-offset-4 hover:underline">
-          <Link href={"/currentSong"}>Folgen (WIP)</Link>
+          <Link href={"/currentSong"}><Music className="w-4 h-4" /> Folgen (WIP)</Link>
         </div>
-        {sessionData ? (
+        {sessionData || true ? (
           <>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
               <Link href={"/profile"}>Profil</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/songbooks"}>Liederbücher (WIP)</Link>
+              <Link href={"/songbooks"}><BookOpen className="w-4 h-4" /> Liederbücher (WIP)</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-              <Link href={"/"}>Unterpunkt create Songbook (WIP)</Link>
+              <Link href={"/"}><Pencil className="w-4 h-4" /> Unterpunkt create Songbook (WIP)</Link>
             </div>
             <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
               <Link
@@ -163,21 +165,21 @@ const SideBar: React.FC = () => {
             </Link>
           </div>
         )}
-        <div className="mt-12 px-4 tracking-widest underline-offset-4 hover:underline">
-          Search (WIP)
+        <div className="flex flex-row gap-2 items-center mt-12 px-4 tracking-widest underline-offset-4 hover:underline">
+          <Search className="w-4 h-4" /> Search (WIP)
         </div>
-        <div className="mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
-          <Link href={"/songs"}>Liste</Link>
+        <div className="flex flex-row gap-2 items-center mt-6 w-full px-4 tracking-widest underline-offset-4 hover:underline">
+          <Scroll className="w-4 h-4" /> 
+          <Link href={"/songs"}>
+            Liste
+          </Link> 
         </div>
         <div className="mt-1 grid grid-cols-6 px-2">
           {LETTERS.map((letter: string) => (
-            <button
+            <Toggle
               key={letter}
-              className={
-                router.query.letter === letter
-                  ? "p-2 text-center underline underline-offset-4"
-                  : "p-2 text-center underline-offset-4 hover:underline"
-              }
+              pressed={router.query.letter === letter}
+              variant={'default'}
             >
               <Link
                 href={{
@@ -188,7 +190,7 @@ const SideBar: React.FC = () => {
               >
                 {letter}
               </Link>
-            </button>
+            </Toggle>
           ))}
         </div>
         {
